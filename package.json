@@ -12,7 +12,7 @@
     "pages:prepare:richauto": "node scripts/prepare-pages-upload.mjs \"../02-Cinkr RichAuto/dist\" richauto \".preview/pages/richauto\"",
     "pages:prepare:mpg": "node scripts/prepare-pages-upload.mjs \"../05-CInkr MPG/dist\" mpg \".preview/pages/mpg\"",
     "acceptance:production": "node scripts/crawl-acceptance.mjs https://cinkr.com/ --mode=production",
-    "acceptance:staging": "node scripts/crawl-acceptance.mjs https://staging.cinkr.com/ --mode=staging",
+    "acceptance:staging": "node scripts/crawl-acceptance.mjs https://cinkr-edge-router-staging.atcspindle.workers.dev/ --mode=staging",
     "check": "npm run validate && npm run test"
   },
   "devDependencies": {
