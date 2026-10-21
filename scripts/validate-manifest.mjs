@@ -4,6 +4,9 @@ const redirects = JSON.parse(await readFile(new URL("../manifests/legacy-redirec
 const seen = new Set();
 for (const redirect of redirects) {
   if (!redirect.host || !redirect.path?.startsWith("/") || !redirect.target?.startsWith("https://cinkr.com/")) throw new Error(`Invalid redirect: ${JSON.stringify(redirect)}`);
+  if (new URL(redirect.target).href === new URL(redirect.path, `https://${redirect.host}`).href) {
+    throw new Error(`Self redirect: ${redirect.host}${redirect.path}`);
+  }
   const key = `${redirect.host}${redirect.path}`;
   if (seen.has(key)) throw new Error(`Duplicate redirect: ${key}`);
   seen.add(key);

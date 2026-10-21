@@ -1,0 +1,83 @@
+# CINKR subdirectory cutover baseline
+
+Captured: 2026-10-21 16:28:26 +08:00
+
+This file is the rollback record for the production cutover. Update the deployment
+and Worker IDs after the migration is accepted; do not remove the pre-cutover
+values.
+
+## Cloudflare scope
+
+- Account ID: `a8d4af671034afd0a869e0ef6b69d311`
+- Zone ID: `b383cf29a0b750dc7791183d790ae584`
+- Zone: `cinkr.com`
+- Shopify hostname `s.cinkr.com` is outside this migration.
+
+## Pre-cutover Pages production deployments
+
+| Project | Production deployment | Current deployment URL |
+| --- | --- | --- |
+| `cinkr-home` | `051e492d-9a93-4f3b-a129-5557297e7bca` | `https://051e492d.cinkr-home.pages.dev` |
+| `cinkr-hmi` | `a8591650-83a0-4bf0-a699-b022e22a1bcd` | `https://a8591650.cinkr-hmi.pages.dev` |
+| `cinkr-hqd` | `1fc9bbb1-6437-440c-a707-e69192c9889c` | `https://1fc9bbb1.cinkr-hqd.pages.dev` |
+| `cinkr-richauto` | `b350c18f-214f-4496-a1bd-f7a73edd4758` | `https://b350c18f.cinkr-richauto.pages.dev` |
+| `cinkr-mpg` | `cffe1962-39a0-4cdd-a157-c70121d620a9` | `https://cffe1962.cinkr-mpg.pages.dev` |
+
+## Pages custom domains
+
+| Project | Custom domains |
+| --- | --- |
+| `cinkr-home` | `cinkr.com`, `www.cinkr.com` |
+| `cinkr-hmi` | `hmi.cinkr.com` |
+| `cinkr-hqd` | `hqd.cinkr.com` |
+| `cinkr-richauto` | `richauto.cinkr.com`, `www.richauto.cinkr.com` |
+| `cinkr-mpg` | `mpg.cinkr.com` |
+
+## DNS records
+
+| Type | Name | Content | Proxied |
+| --- | --- | --- | --- |
+| CNAME | `cinkr.com` | `cinkr-home.pages.dev` | yes |
+| CNAME | `www.cinkr.com` | `cinkr-home.pages.dev` | yes |
+| CNAME | `hmi.cinkr.com` | `cinkr-hmi.pages.dev` | yes |
+| CNAME | `hqd.cinkr.com` | `cinkr-hqd.pages.dev` | yes |
+| CNAME | `richauto.cinkr.com` | `cinkr-richauto.pages.dev` | yes |
+| CNAME | `mpg.cinkr.com` | `cinkr-mpg.pages.dev` | yes |
+| A | `www.richauto.cinkr.com` | `192.0.2.1` | yes |
+| AAAA | `staging.cinkr.com` | `100::` | yes |
+
+## Workers before cutover
+
+- No production `cinkr-edge-router` script existed.
+- Existing staging script: `cinkr-edge-router-staging`.
+- Existing staging route: `staging.cinkr.com/*`.
+- Latest verified staging version before the package/Worker hardening:
+  `b56cba67-8e06-42fc-815a-542abc2fb1c4`.
+- The staging Worker must retain Cloudflare Access, `X-Robots-Tag: noindex`,
+  and `Cache-Control: no-store`.
+
+## Immutable migration preview aliases
+
+These aliases were used to validate the subdirectory builds before production:
+
+- `https://migration-subdirectory-20261.cinkr-home.pages.dev`
+- `https://migration-subdirectory-20261.cinkr-hmi.pages.dev`
+- `https://migration-subdirectory-20261.cinkr-hqd.pages.dev`
+- `https://migration-subdirectory-20261.cinkr-richauto.pages.dev`
+- `https://migration-subdirectory-20261.cinkr-mpg.pages.dev`
+
+## Rollback sequence
+
+1. Remove the production routes for `cinkr.com`, `www.cinkr.com`,
+   `hmi.cinkr.com`, `hqd.cinkr.com`, `richauto.cinkr.com`, and
+   `mpg.cinkr.com` from `cinkr-edge-router`.
+2. Restore each Pages production deployment listed above if its project was
+   replaced after the baseline.
+3. Confirm the original custom-domain mappings and the DNS values in this file.
+4. Verify HTTP 200 on `/`, each old product-domain root, representative model
+   pages, CSS, JavaScript, and images.
+5. Keep the new Pages deployments and Worker available but unrouted for
+   diagnosis; they are not part of the public rollback path.
+
+The 301 redirect manifest must remain deployed for at least one year after the
+production cutover.

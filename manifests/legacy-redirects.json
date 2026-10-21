@@ -1,7 +1,4142 @@
 [
-  { "host": "hmi.cinkr.com", "path": "/", "target": "https://cinkr.com/kinco/" },
-  { "host": "hqd.cinkr.com", "path": "/", "target": "https://cinkr.com/hqd/" },
-  { "host": "richauto.cinkr.com", "path": "/", "target": "https://cinkr.com/richauto/" },
-  { "host": "mpg.cinkr.com", "path": "/", "target": "https://cinkr.com/mpg/" },
-  { "host": "cinkr.com", "path": "/hmi/", "target": "https://cinkr.com/kinco/" }
+  {
+    "host": "cinkr.com",
+    "path": "/hmi/",
+    "target": "https://cinkr.com/kinco/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-g100",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-g100/",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-g100e",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-g100e/",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl043",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl043/",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl043e",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl043e/",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl070",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl070/",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl070e",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl070e/",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl100",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl100/",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl100e",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl100e/",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl150e",
+    "target": "https://cinkr.com/kinco/gl150e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl150e/",
+    "target": "https://cinkr.com/kinco/gl150e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2070he",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2070he-4g",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2070he-4g/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2070he-wifi",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2070he-wifi/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2070he/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2100e",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2100e-4g",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2100e-4g/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2100e-wifi",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2100e-wifi/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/kinco-gl2100e/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/category/hmi-plc",
+    "target": "https://cinkr.com/kinco/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/category/hmi-plc/",
+    "target": "https://cinkr.com/kinco/"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/g1/G100.png",
+    "target": "https://cinkr.com/kinco/images/models/g100-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/g1/G100E.png",
+    "target": "https://cinkr.com/kinco/images/models/g100-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl/GL043.png",
+    "target": "https://cinkr.com/kinco/images/models/gl043-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl/GL043E.png",
+    "target": "https://cinkr.com/kinco/images/models/gl043-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl/GL070.png",
+    "target": "https://cinkr.com/kinco/images/models/gl070-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl/GL070E.png",
+    "target": "https://cinkr.com/kinco/images/models/gl070-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl/GL100.png",
+    "target": "https://cinkr.com/kinco/images/models/gl100-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl/GL100E.png",
+    "target": "https://cinkr.com/kinco/images/models/gl100-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl/GL150E.png",
+    "target": "https://cinkr.com/kinco/images/models/gl150e-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl2/GL2070HE-4G.png",
+    "target": "https://cinkr.com/kinco/images/models/gl2070he-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl2/GL2070HE-WIFI.png",
+    "target": "https://cinkr.com/kinco/images/models/gl2070he-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl2/GL2070HE.png",
+    "target": "https://cinkr.com/kinco/images/models/gl2070he-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl2/GL2100E-4G.png",
+    "target": "https://cinkr.com/kinco/images/models/gl2100e-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl2/GL2100E-WIFI.png",
+    "target": "https://cinkr.com/kinco/images/models/gl2100e-1.webp"
+  },
+  {
+    "host": "cinkr.com",
+    "path": "/products/kinco-hmi/gl2/GL2100E.png",
+    "target": "https://cinkr.com/kinco/images/models/gl2100e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/",
+    "target": "https://cinkr.com/kinco/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/_astro/_model_.astro_astro_type_script_index_0_lang.DCiQOMSS.js",
+    "target": "https://cinkr.com/kinco/_astro/_model_.astro_astro_type_script_index_0_lang.DCiQOMSS.js"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/_astro/CollectionHubPage.astro_astro_type_script_index_0_lang.B7LN76uw.js",
+    "target": "https://cinkr.com/kinco/_astro/CollectionHubPage.astro_astro_type_script_index_0_lang.B7LN76uw.js"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/_astro/HomeFooter.CRdRujgg.css",
+    "target": "https://cinkr.com/kinco/_astro/HomeFooter.CRdRujgg.css"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/_astro/index.astro_astro_type_script_index_0_lang.CMyOIOXw.js",
+    "target": "https://cinkr.com/kinco/_astro/index.astro_astro_type_script_index_0_lang.CMyOIOXw.js"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/_astro/nav.B9Ha7vTd.js",
+    "target": "https://cinkr.com/kinco/_astro/nav.B9Ha7vTd.js"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/_astro/rfq.oEj3N4pN.js",
+    "target": "https://cinkr.com/kinco/_astro/rfq.oEj3N4pN.js"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/404.html",
+    "target": "https://cinkr.com/kinco/404.html"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/7-inch-hmi/",
+    "target": "https://cinkr.com/kinco/7-inch-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/",
+    "target": "https://cinkr.com/kinco/blog/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/hmi-communication-port-and-download-setup/",
+    "target": "https://cinkr.com/kinco/blog/hmi-communication-port-and-download-setup/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/hmi-display-size-and-touch-comparison/",
+    "target": "https://cinkr.com/kinco/blog/hmi-display-size-and-touch-comparison/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/hmi-panel-replacement-checklist/",
+    "target": "https://cinkr.com/kinco/blog/hmi-panel-replacement-checklist/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/installation-and-replacement/",
+    "target": "https://cinkr.com/kinco/blog/installation-and-replacement/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-7-inch-hmi-selection/",
+    "target": "https://cinkr.com/kinco/blog/kinco-7-inch-hmi-selection/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-g1-vs-g2-hmi/",
+    "target": "https://cinkr.com/kinco/blog/kinco-g1-vs-g2-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-gl-vs-gl2-hmi/",
+    "target": "https://cinkr.com/kinco/blog/kinco-gl-vs-gl2-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-gl2-vs-g2-vs-f2-hmi/",
+    "target": "https://cinkr.com/kinco/blog/kinco-gl2-vs-g2-vs-f2-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-gt2-vs-g2-hmi/",
+    "target": "https://cinkr.com/kinco/blog/kinco-gt2-vs-g2-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-allen-bradley-plc-driver-checklist/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-allen-bradley-plc-driver-checklist/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-backup-and-recovery/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-backup-and-recovery/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-cutout-dimensions/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-cutout-dimensions/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-delta-plc-driver-checklist/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-delta-plc-driver-checklist/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-discontinued-models/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-discontinued-models/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-dtools-software-download/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-dtools-software-download/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-ethernet-vs-serial/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-ethernet-vs-serial/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-installation-cabinet-power/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-installation-cabinet-power/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-mitsubishi-plc-driver-checklist/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-mitsubishi-plc-driver-checklist/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-modbus-rtu-vs-tcp/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-modbus-rtu-vs-tcp/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-omron-plc-driver-checklist/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-omron-plc-driver-checklist/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-packaging-machines/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-packaging-machines/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-panel-selection-guide/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-panel-selection-guide/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-plc-compatibility/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-plc-compatibility/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-plc-no-response/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-plc-no-response/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-project-migration/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-project-migration/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-pump-water-control-panels/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-pump-water-control-panels/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-remote-access-edgeaccess2/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-remote-access-edgeaccess2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-schneider-plc-driver-checklist/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-schneider-plc-driver-checklist/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-series-guide/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-series-guide/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-siemens-plc-driver-checklist/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-siemens-plc-driver-checklist/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-usb-download/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-usb-download/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-hmi-wifi-vs-4g/",
+    "target": "https://cinkr.com/kinco/blog/kinco-hmi-wifi-vs-4g/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/kinco-mt-vs-m2-hmi/",
+    "target": "https://cinkr.com/kinco/blog/kinco-mt-vs-m2-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/page/2/",
+    "target": "https://cinkr.com/kinco/blog/page/2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/page/3/",
+    "target": "https://cinkr.com/kinco/blog/page/3/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/selection-and-comparison/",
+    "target": "https://cinkr.com/kinco/blog/selection-and-comparison/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/blog/software-and-communication/",
+    "target": "https://cinkr.com/kinco/blog/software-and-communication/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/brand/hmi-apple-touch-icon.png",
+    "target": "https://cinkr.com/kinco/brand/hmi-apple-touch-icon.png"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/brand/hmi-favicon.png",
+    "target": "https://cinkr.com/kinco/brand/hmi-favicon.png"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/brand/hmi-logo-dark.webp",
+    "target": "https://cinkr.com/kinco/brand/hmi-logo-dark.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/brand/hmi-logo-light.webp",
+    "target": "https://cinkr.com/kinco/brand/hmi-logo-light.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/brand/hmi-social-card.png",
+    "target": "https://cinkr.com/kinco/brand/hmi-social-card.png"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/dtools-pro-hmi/",
+    "target": "https://cinkr.com/kinco/dtools-pro-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/ethernet-hmi/",
+    "target": "https://cinkr.com/kinco/ethernet-hmi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2070E",
+    "target": "https://cinkr.com/kinco/f2070e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2070e/",
+    "target": "https://cinkr.com/kinco/f2070e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2070E/",
+    "target": "https://cinkr.com/kinco/f2070e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2070E2",
+    "target": "https://cinkr.com/kinco/f2070e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2070e2/",
+    "target": "https://cinkr.com/kinco/f2070e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2070E2/",
+    "target": "https://cinkr.com/kinco/f2070e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2100E",
+    "target": "https://cinkr.com/kinco/f2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2100e/",
+    "target": "https://cinkr.com/kinco/f2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2100E/",
+    "target": "https://cinkr.com/kinco/f2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2100e2",
+    "target": "https://cinkr.com/kinco/f2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2100E2",
+    "target": "https://cinkr.com/kinco/f2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2100e2/",
+    "target": "https://cinkr.com/kinco/f2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2100E2/",
+    "target": "https://cinkr.com/kinco/f2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2121E",
+    "target": "https://cinkr.com/kinco/f2121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2121e/",
+    "target": "https://cinkr.com/kinco/f2121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2121E/",
+    "target": "https://cinkr.com/kinco/f2121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2121e2",
+    "target": "https://cinkr.com/kinco/f2121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2121E2",
+    "target": "https://cinkr.com/kinco/f2121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2121e2/",
+    "target": "https://cinkr.com/kinco/f2121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2121E2/",
+    "target": "https://cinkr.com/kinco/f2121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2150E2",
+    "target": "https://cinkr.com/kinco/f2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2150e2/",
+    "target": "https://cinkr.com/kinco/f2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2150E2/",
+    "target": "https://cinkr.com/kinco/f2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2156E",
+    "target": "https://cinkr.com/kinco/f2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2156e/",
+    "target": "https://cinkr.com/kinco/f2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2156E/",
+    "target": "https://cinkr.com/kinco/f2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2156e2",
+    "target": "https://cinkr.com/kinco/f2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2156E2",
+    "target": "https://cinkr.com/kinco/f2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/f2156e2/",
+    "target": "https://cinkr.com/kinco/f2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/F2156E2/",
+    "target": "https://cinkr.com/kinco/f2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/favicon.ico",
+    "target": "https://cinkr.com/kinco/favicon.ico"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G070",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g070/",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G070/",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g070e",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G070E",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g070e-can",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G070E-CAN",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g070e-can/",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G070E-CAN/",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g070e/",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G070E/",
+    "target": "https://cinkr.com/kinco/g070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G100",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g100/",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G100/",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g100e",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G100E",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g100e/",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G100E/",
+    "target": "https://cinkr.com/kinco/g100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G121E",
+    "target": "https://cinkr.com/kinco/g121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g121e/",
+    "target": "https://cinkr.com/kinco/g121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G121E/",
+    "target": "https://cinkr.com/kinco/g121e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2070he-4g",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE-4G",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2070he-4g/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE-4G/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2070he-wifi",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE-WIFI",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2070he-wifi/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE-WIFI/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2070he/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2070he2",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE2",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2070he2/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2070HE2/",
+    "target": "https://cinkr.com/kinco/g2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2100e-4g",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E-4G",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2100e-4g/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E-4G/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2100e-wifi",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E-WIFI",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2100e-wifi/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E-WIFI/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2100e/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2100e2",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E2",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2100e2/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2100E2/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2101e",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2101E",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2101e-4g",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2101E-4G",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2101e-4g/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2101E-4G/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2101e/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2101E/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2101e2",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2101E2",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2101e2/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2101E2/",
+    "target": "https://cinkr.com/kinco/g2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2121E2",
+    "target": "https://cinkr.com/kinco/g2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2121e2-4g",
+    "target": "https://cinkr.com/kinco/g2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2121E2-4G",
+    "target": "https://cinkr.com/kinco/g2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2121e2-4g/",
+    "target": "https://cinkr.com/kinco/g2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2121E2-4G/",
+    "target": "https://cinkr.com/kinco/g2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2121e2/",
+    "target": "https://cinkr.com/kinco/g2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2121E2/",
+    "target": "https://cinkr.com/kinco/g2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2150E2",
+    "target": "https://cinkr.com/kinco/g2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2150e2/",
+    "target": "https://cinkr.com/kinco/g2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2150E2/",
+    "target": "https://cinkr.com/kinco/g2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2156E",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2156e-wifi",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2156E-WIFI",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2156e-wifi/",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2156E-WIFI/",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2156e/",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2156E/",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2156e2",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2156E2",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/g2156e2/",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/G2156E2/",
+    "target": "https://cinkr.com/kinco/g2156e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH043",
+    "target": "https://cinkr.com/kinco/gh043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh043/",
+    "target": "https://cinkr.com/kinco/gh043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH043/",
+    "target": "https://cinkr.com/kinco/gh043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh043e",
+    "target": "https://cinkr.com/kinco/gh043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH043E",
+    "target": "https://cinkr.com/kinco/gh043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh043e/",
+    "target": "https://cinkr.com/kinco/gh043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH043E/",
+    "target": "https://cinkr.com/kinco/gh043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH070",
+    "target": "https://cinkr.com/kinco/gh070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh070/",
+    "target": "https://cinkr.com/kinco/gh070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH070/",
+    "target": "https://cinkr.com/kinco/gh070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh070e",
+    "target": "https://cinkr.com/kinco/gh070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH070E",
+    "target": "https://cinkr.com/kinco/gh070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh070e/",
+    "target": "https://cinkr.com/kinco/gh070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH070E/",
+    "target": "https://cinkr.com/kinco/gh070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH104E",
+    "target": "https://cinkr.com/kinco/gh104e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh104e/",
+    "target": "https://cinkr.com/kinco/gh104e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH104E/",
+    "target": "https://cinkr.com/kinco/gh104e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH150E",
+    "target": "https://cinkr.com/kinco/gh150e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gh150e/",
+    "target": "https://cinkr.com/kinco/gh150e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GH150E/",
+    "target": "https://cinkr.com/kinco/gh150e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL043",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl043/",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL043/",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl043e",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL043E",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl043e/",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL043E/",
+    "target": "https://cinkr.com/kinco/gl043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL070",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl070/",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL070/",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl070e",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL070E",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl070e/",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL070E/",
+    "target": "https://cinkr.com/kinco/gl070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL100",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl100/",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL100/",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl100e",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL100E",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl100e/",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL100E/",
+    "target": "https://cinkr.com/kinco/gl100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL104E",
+    "target": "https://cinkr.com/kinco/gl104e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl104e/",
+    "target": "https://cinkr.com/kinco/gl104e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL104E/",
+    "target": "https://cinkr.com/kinco/gl104e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL150E",
+    "target": "https://cinkr.com/kinco/gl150e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl150e/",
+    "target": "https://cinkr.com/kinco/gl150e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL150E/",
+    "target": "https://cinkr.com/kinco/gl150e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2043HE",
+    "target": "https://cinkr.com/kinco/gl2043he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2043he/",
+    "target": "https://cinkr.com/kinco/gl2043he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2043HE/",
+    "target": "https://cinkr.com/kinco/gl2043he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2070HE",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2070he-4g",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2070HE-4G",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2070he-4g/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2070HE-4G/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2070he-wifi",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2070HE-WIFI",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2070he-wifi/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2070HE-WIFI/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2070he/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2070HE/",
+    "target": "https://cinkr.com/kinco/gl2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2100E",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2100e-4g",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2100E-4G",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2100e-4g/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2100E-4G/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2100e-wifi",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2100E-WIFI",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2100e-wifi/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2100E-WIFI/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2100e/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2100E/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2101e",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2101E",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2101e-4g",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2101E-4G",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2101e-4g/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2101E-4G/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2101e-wifi",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2101E-WIFI",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2101e-wifi/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2101E-WIFI/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gl2101e/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GL2101E/",
+    "target": "https://cinkr.com/kinco/gl2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2070HE",
+    "target": "https://cinkr.com/kinco/gt2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gt2070he/",
+    "target": "https://cinkr.com/kinco/gt2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2070HE/",
+    "target": "https://cinkr.com/kinco/gt2070he/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2100E",
+    "target": "https://cinkr.com/kinco/gt2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gt2100e/",
+    "target": "https://cinkr.com/kinco/gt2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2100E/",
+    "target": "https://cinkr.com/kinco/gt2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gt2101e",
+    "target": "https://cinkr.com/kinco/gt2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2101E",
+    "target": "https://cinkr.com/kinco/gt2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gt2101e/",
+    "target": "https://cinkr.com/kinco/gt2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2101E/",
+    "target": "https://cinkr.com/kinco/gt2100e/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2121E2",
+    "target": "https://cinkr.com/kinco/gt2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gt2121e2/",
+    "target": "https://cinkr.com/kinco/gt2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2121E2/",
+    "target": "https://cinkr.com/kinco/gt2121e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2150E2",
+    "target": "https://cinkr.com/kinco/gt2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gt2150e2/",
+    "target": "https://cinkr.com/kinco/gt2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2150E2/",
+    "target": "https://cinkr.com/kinco/gt2150e2/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2156E-WIFI",
+    "target": "https://cinkr.com/kinco/gt2156e-wifi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/gt2156e-wifi/",
+    "target": "https://cinkr.com/kinco/gt2156e-wifi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/GT2156E-WIFI/",
+    "target": "https://cinkr.com/kinco/gt2156e-wifi/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/f2070e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/f2070e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/f2070e2-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/f2070e2-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/f2100e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/f2100e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/f2121e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/f2121e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/f2150e2-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/f2150e2-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/f2156e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/f2156e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g070-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g070-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g100-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g100-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g121e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g121e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g2070he-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g2070he-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g2100e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g2100e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g2121e2-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g2121e2-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g2150e2-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g2150e2-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/g2156e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/g2156e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gh043-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gh043-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gh070-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gh070-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gh104e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gh104e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gh150e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gh150e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl043-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl043-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl070-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl070-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl100-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl100-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl104e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl104e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl150e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl150e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl2043he-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl2043he-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl2070he-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl2070he-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gl2100e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gl2100e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gt2070he-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gt2070he-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gt2100e-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gt2100e-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gt2121e2-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gt2121e2-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gt2150e2-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gt2150e2-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/gt2156e-wifi-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/gt2156e-wifi-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/m2043h-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/m2043h-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/m2070h-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/m2070h-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/m2100-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/m2100-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/mt043-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/mt043-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/mt070-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/mt070-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/images/models/mt100-1.webp",
+    "target": "https://cinkr.com/kinco/images/models/mt100-1.webp"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2043H",
+    "target": "https://cinkr.com/kinco/m2043h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2043h/",
+    "target": "https://cinkr.com/kinco/m2043h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2043H/",
+    "target": "https://cinkr.com/kinco/m2043h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2043he",
+    "target": "https://cinkr.com/kinco/m2043h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2043HE",
+    "target": "https://cinkr.com/kinco/m2043h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2043he/",
+    "target": "https://cinkr.com/kinco/m2043h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2043HE/",
+    "target": "https://cinkr.com/kinco/m2043h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2070H",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2070h/",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2070H/",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2070he",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2070HE",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2070he-wifi",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2070HE-WIFI",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2070he-wifi/",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2070HE-WIFI/",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2070he/",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2070HE/",
+    "target": "https://cinkr.com/kinco/m2070h/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2100",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2100/",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2100/",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2100e",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2100E",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2100e-wifi",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2100E-WIFI",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2100e-wifi/",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2100E-WIFI/",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/m2100e/",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/M2100E/",
+    "target": "https://cinkr.com/kinco/m2100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT043",
+    "target": "https://cinkr.com/kinco/mt043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt043/",
+    "target": "https://cinkr.com/kinco/mt043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT043/",
+    "target": "https://cinkr.com/kinco/mt043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt043e",
+    "target": "https://cinkr.com/kinco/mt043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT043E",
+    "target": "https://cinkr.com/kinco/mt043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt043e/",
+    "target": "https://cinkr.com/kinco/mt043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT043E/",
+    "target": "https://cinkr.com/kinco/mt043/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070c",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070C",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070c/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070C/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070e",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070E",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070e-4g",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070E-4G",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070e-4g/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070E-4G/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070e/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070E/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070ec",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070EC",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt070ec/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT070EC/",
+    "target": "https://cinkr.com/kinco/mt070/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT100",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt100/",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT100/",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt100e",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT100E",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt100e-4g",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT100E-4G",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt100e-4g/",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT100E-4G/",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/mt100e/",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/MT100E/",
+    "target": "https://cinkr.com/kinco/mt100/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/privacy-policy/",
+    "target": "https://cinkr.com/kinco/privacy-policy/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/robots.txt",
+    "target": "https://cinkr.com/robots.txt"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/scripts/guide-table-scroll.js",
+    "target": "https://cinkr.com/kinco/scripts/guide-table-scroll.js"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/series/advanced/",
+    "target": "https://cinkr.com/kinco/series/advanced/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/series/basic/",
+    "target": "https://cinkr.com/kinco/series/basic/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/series/standard/",
+    "target": "https://cinkr.com/kinco/series/standard/"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/sitemap-0.xml",
+    "target": "https://cinkr.com/kinco/sitemap-0.xml"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/sitemap-images.xml",
+    "target": "https://cinkr.com/kinco/sitemap-images.xml"
+  },
+  {
+    "host": "hmi.cinkr.com",
+    "path": "/sitemap-index.xml",
+    "target": "https://cinkr.com/kinco/sitemap-index.xml"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/",
+    "target": "https://cinkr.com/hqd/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/_model_.astro_astro_type_script_index_0_lang.e5MUgKpa.js",
+    "target": "https://cinkr.com/hqd/_astro/_model_.astro_astro_type_script_index_0_lang.e5MUgKpa.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/_series_.astro_astro_type_script_index_0_lang.zJ_Dw0Mk.js",
+    "target": "https://cinkr.com/hqd/_astro/_series_.astro_astro_type_script_index_0_lang.zJ_Dw0Mk.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/Catalog.astro_astro_type_script_index_0_lang.C-CnSnIP.js",
+    "target": "https://cinkr.com/hqd/_astro/Catalog.astro_astro_type_script_index_0_lang.C-CnSnIP.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/gallery.BP-u2w7z.js",
+    "target": "https://cinkr.com/hqd/_astro/gallery.BP-u2w7z.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/GuideBlocks.astro_astro_type_script_index_0_lang.e5MUgKpa.js",
+    "target": "https://cinkr.com/hqd/_astro/GuideBlocks.astro_astro_type_script_index_0_lang.e5MUgKpa.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/GuideOverview.astro_astro_type_script_index_0_lang.zJ_Dw0Mk.js",
+    "target": "https://cinkr.com/hqd/_astro/GuideOverview.astro_astro_type_script_index_0_lang.zJ_Dw0Mk.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/HomeSupport.astro_astro_type_script_index_0_lang.CB8NacUq.js",
+    "target": "https://cinkr.com/hqd/_astro/HomeSupport.astro_astro_type_script_index_0_lang.CB8NacUq.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/index.astro_astro_type_script_index_0_lang.4hkq20QE.js",
+    "target": "https://cinkr.com/hqd/_astro/index.astro_astro_type_script_index_0_lang.4hkq20QE.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/index.astro_astro_type_script_index_0_lang.UV4jjUjw.js",
+    "target": "https://cinkr.com/hqd/_astro/index.astro_astro_type_script_index_0_lang.UV4jjUjw.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/Inquiry.astro_astro_type_script_index_0_lang.DcNDUpjj.js",
+    "target": "https://cinkr.com/hqd/_astro/Inquiry.astro_astro_type_script_index_0_lang.DcNDUpjj.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/model-filter.BnTxiKDk.js",
+    "target": "https://cinkr.com/hqd/_astro/model-filter.BnTxiKDk.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/ProductTechnical.astro_astro_type_script_index_0_lang.-SPcn8wJ.js",
+    "target": "https://cinkr.com/hqd/_astro/ProductTechnical.astro_astro_type_script_index_0_lang.-SPcn8wJ.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/SiteChrome.astro_astro_type_script_index_0_lang.DaX4ajEe.js",
+    "target": "https://cinkr.com/hqd/_astro/SiteChrome.astro_astro_type_script_index_0_lang.DaX4ajEe.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/SiteChrome.BG4ff0Gc.css",
+    "target": "https://cinkr.com/hqd/_astro/SiteChrome.BG4ff0Gc.css"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/_astro/table-scroll.ApXM0r37.js",
+    "target": "https://cinkr.com/hqd/_astro/table-scroll.ApXM0r37.js"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/404.html",
+    "target": "https://cinkr.com/hqd/404.html"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/",
+    "target": "https://cinkr.com/hqd/blog/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/air-cooled-vs-water-cooled-spindles/",
+    "target": "https://cinkr.com/hqd/blog/air-cooled-vs-water-cooled-spindles/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/atc-spindle-requirements/",
+    "target": "https://cinkr.com/hqd/blog/atc-spindle-requirements/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/choosing-an-hqd-spindle/",
+    "target": "https://cinkr.com/hqd/blog/choosing-an-hqd-spindle/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/cnc-spindle-for-aluminum/",
+    "target": "https://cinkr.com/hqd/blog/cnc-spindle-for-aluminum/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/cnc-spindle-for-woodworking/",
+    "target": "https://cinkr.com/hqd/blog/cnc-spindle-for-woodworking/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/cnc-spindle-power-0-8kw-1-5kw-2-2kw/",
+    "target": "https://cinkr.com/hqd/blog/cnc-spindle-power-0-8kw-1-5kw-2-2kw/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/cnc-spindle-power-torque-duty/",
+    "target": "https://cinkr.com/hqd/blog/cnc-spindle-power-torque-duty/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/er-collet-sizes-for-cnc-spindles/",
+    "target": "https://cinkr.com/hqd/blog/er-collet-sizes-for-cnc-spindles/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/hqd-spindle-model-code/",
+    "target": "https://cinkr.com/hqd/blog/hqd-spindle-model-code/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/hqd-spindle-pricing-quotation/",
+    "target": "https://cinkr.com/hqd/blog/hqd-spindle-pricing-quotation/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/hqd-spindle-series-comparison/",
+    "target": "https://cinkr.com/hqd/blog/hqd-spindle-series-comparison/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/iso20-iso30-bt30-atc-spindles/",
+    "target": "https://cinkr.com/hqd/blog/iso20-iso30-bt30-atc-spindles/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/matching-a-vfd-to-an-hqd-spindle/",
+    "target": "https://cinkr.com/hqd/blog/matching-a-vfd-to-an-hqd-spindle/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/blog/spindle-replacement-checklist/",
+    "target": "https://cinkr.com/hqd/blog/spindle-replacement-checklist/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/air-cooled-vs-water-cooled-spindles-rewritten-20261004.png",
+    "target": "https://cinkr.com/hqd/brand/guides/air-cooled-vs-water-cooled-spindles-rewritten-20261004.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/air-cooled-vs-water-cooled-spindles.png",
+    "target": "https://cinkr.com/hqd/brand/guides/air-cooled-vs-water-cooled-spindles.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/air-cooled-vs-water-cooled-spindles.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/air-cooled-vs-water-cooled-spindles.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/atc-spindle-requirements-rewritten-20261004.png",
+    "target": "https://cinkr.com/hqd/brand/guides/atc-spindle-requirements-rewritten-20261004.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/atc-spindle-requirements.png",
+    "target": "https://cinkr.com/hqd/brand/guides/atc-spindle-requirements.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/atc-spindle-requirements.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/atc-spindle-requirements.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/choosing-an-hqd-spindle-rewritten-20261004.png",
+    "target": "https://cinkr.com/hqd/brand/guides/choosing-an-hqd-spindle-rewritten-20261004.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/choosing-an-hqd-spindle.png",
+    "target": "https://cinkr.com/hqd/brand/guides/choosing-an-hqd-spindle.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/choosing-an-hqd-spindle.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/choosing-an-hqd-spindle.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-for-aluminum.png",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-for-aluminum.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-for-aluminum.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-for-aluminum.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-for-woodworking.png",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-for-woodworking.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-for-woodworking.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-for-woodworking.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-power-0-8kw-1-5kw-2-2kw.png",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-power-0-8kw-1-5kw-2-2kw.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-power-0-8kw-1-5kw-2-2kw.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-power-0-8kw-1-5kw-2-2kw.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-power-torque-duty.png",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-power-torque-duty.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/cnc-spindle-power-torque-duty.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/cnc-spindle-power-torque-duty.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/er-collet-sizes-for-cnc-spindles.png",
+    "target": "https://cinkr.com/hqd/brand/guides/er-collet-sizes-for-cnc-spindles.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/er-collet-sizes-for-cnc-spindles.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/er-collet-sizes-for-cnc-spindles.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/hqd-spindle-series-comparison-rewritten-20261004.png",
+    "target": "https://cinkr.com/hqd/brand/guides/hqd-spindle-series-comparison-rewritten-20261004.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/hqd-spindle-series-comparison.png",
+    "target": "https://cinkr.com/hqd/brand/guides/hqd-spindle-series-comparison.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/hqd-spindle-series-comparison.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/hqd-spindle-series-comparison.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/iso20-iso30-bt30-atc-spindles.png",
+    "target": "https://cinkr.com/hqd/brand/guides/iso20-iso30-bt30-atc-spindles.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/iso20-iso30-bt30-atc-spindles.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/iso20-iso30-bt30-atc-spindles.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/matching-a-vfd-to-an-hqd-spindle-rewritten-20261004.png",
+    "target": "https://cinkr.com/hqd/brand/guides/matching-a-vfd-to-an-hqd-spindle-rewritten-20261004.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/matching-a-vfd-to-an-hqd-spindle.png",
+    "target": "https://cinkr.com/hqd/brand/guides/matching-a-vfd-to-an-hqd-spindle.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/matching-a-vfd-to-an-hqd-spindle.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/matching-a-vfd-to-an-hqd-spindle.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/spindle-replacement-checklist-rewritten-20261004.png",
+    "target": "https://cinkr.com/hqd/brand/guides/spindle-replacement-checklist-rewritten-20261004.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/spindle-replacement-checklist.png",
+    "target": "https://cinkr.com/hqd/brand/guides/spindle-replacement-checklist.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/guides/spindle-replacement-checklist.svg",
+    "target": "https://cinkr.com/hqd/brand/guides/spindle-replacement-checklist.svg"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/hqd-apple-touch-icon.png",
+    "target": "https://cinkr.com/hqd/brand/hqd-apple-touch-icon.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/hqd-favicon.png",
+    "target": "https://cinkr.com/hqd/brand/hqd-favicon.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/hqd-logo-dark.webp",
+    "target": "https://cinkr.com/hqd/brand/hqd-logo-dark.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/hqd-logo-light.webp",
+    "target": "https://cinkr.com/hqd/brand/hqd-logo-light.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/brand/hqd-social-card.png",
+    "target": "https://cinkr.com/hqd/brand/hqd-social-card.png"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdf46-18z-2-2-base-mount-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdf46-18z-2-2-base-mount-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdf46-18z-2-2-base-mount-2.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdf46-18z-2-2-base-mount-2.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdf65-24z-0-8-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdf65-24z-0-8-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdf80-24z-1-5-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdf80-24z-1-5-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdf80-24z-2-2-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdf80-24z-2-2-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdk100-12-24z-2-2-4-4-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdk100-12-24z-2-2-4-4-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdk100-12-24z-2-2-4-4-2.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdk100-12-24z-2-2-4-4-2.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdl120-30-24z-5-5-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdl120-30-24z-5-5-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdl120-30-24z-5-5-2.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdl120-30-24z-5-5-2.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdl40-5-iso20-24z-2-2-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdl40-5-iso20-24z-2-2-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdl70-24z-9-0-iso30-long-nose-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdl70-24z-9-0-iso30-long-nose-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdl70-24z-9-0-iso30-long-nose-2.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdl70-24z-9-0-iso30-long-nose-2.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdl70-24z-9-0-iso30-short-nose-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdl70-24z-9-0-iso30-short-nose-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdl70-24z-9-0b-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdl70-24z-9-0b-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/downloads/gdz-23-1.pdf",
+    "target": "https://cinkr.com/hqd/downloads/gdz-23-1.pdf"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/favicon.ico",
+    "target": "https://cinkr.com/hqd/favicon.ico"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdf46-18z-1-5-base-mount/",
+    "target": "https://cinkr.com/hqd/gdf46-18z-1-5-base-mount/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdf46-18z-2-2-base-mount/",
+    "target": "https://cinkr.com/hqd/gdf46-18z-2-2-base-mount/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdf46-18z-2-2-housing-mount/",
+    "target": "https://cinkr.com/hqd/gdf46-18z-2-2-housing-mount/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdf65-24z-0-8/",
+    "target": "https://cinkr.com/hqd/gdf65-24z-0-8/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdf80-24z-1-5/",
+    "target": "https://cinkr.com/hqd/gdf80-24z-1-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdf80-24z-2-2/",
+    "target": "https://cinkr.com/hqd/gdf80-24z-2-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdf80-24z-2-2b/",
+    "target": "https://cinkr.com/hqd/gdf80-24z-2-2b/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk100-12-24z-2-2-4-4/",
+    "target": "https://cinkr.com/hqd/gdk100-12-24z-2-2-4-4/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk100-24z-3-2/",
+    "target": "https://cinkr.com/hqd/gdk100-24z-3-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk105-21z-3-5/",
+    "target": "https://cinkr.com/hqd/gdk105-21z-3-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk105-9-21z-2-2-5-0/",
+    "target": "https://cinkr.com/hqd/gdk105-9-21z-2-2-5-0/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk110-9-18z-2-2-4-4/",
+    "target": "https://cinkr.com/hqd/gdk110-9-18z-2-2-4-4/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk125-12-24z-7-5/",
+    "target": "https://cinkr.com/hqd/gdk125-12-24z-7-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk125-30z-7-5/",
+    "target": "https://cinkr.com/hqd/gdk125-30z-7-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk125-9-15z-5-5-11/",
+    "target": "https://cinkr.com/hqd/gdk125-9-15z-5-5-11/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk58-24z-0-8/",
+    "target": "https://cinkr.com/hqd/gdk58-24z-0-8/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk80-12-24z-1-2-2-4/",
+    "target": "https://cinkr.com/hqd/gdk80-12-24z-1-2-2-4/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk80-24z-1-5/",
+    "target": "https://cinkr.com/hqd/gdk80-24z-1-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk80-24z-2-2/",
+    "target": "https://cinkr.com/hqd/gdk80-24z-2-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdk85-24z-2-2d/",
+    "target": "https://cinkr.com/hqd/gdk85-24z-2-2d/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl100-25-24z-2-5/",
+    "target": "https://cinkr.com/hqd/gdl100-25-24z-2-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl110-30-18z-3-2/",
+    "target": "https://cinkr.com/hqd/gdl110-30-18z-3-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl120-30-24z-5-5/",
+    "target": "https://cinkr.com/hqd/gdl120-30-24z-5-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl125-40-12z-7-5/",
+    "target": "https://cinkr.com/hqd/gdl125-40-12z-7-5/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl40-5-iso20-24z-2-2/",
+    "target": "https://cinkr.com/hqd/gdl40-5-iso20-24z-2-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl70-24z-9-0-iso30-long-nose/",
+    "target": "https://cinkr.com/hqd/gdl70-24z-9-0-iso30-long-nose/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl70-24z-9-0-iso30-short-nose/",
+    "target": "https://cinkr.com/hqd/gdl70-24z-9-0-iso30-short-nose/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl70-24z-9-0b/",
+    "target": "https://cinkr.com/hqd/gdl70-24z-9-0b/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdl80-20-24z-2-2b/",
+    "target": "https://cinkr.com/hqd/gdl80-20-24z-2-2b/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-17b/",
+    "target": "https://cinkr.com/hqd/gdz-17b/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-18-2/",
+    "target": "https://cinkr.com/hqd/gdz-18-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-18/",
+    "target": "https://cinkr.com/hqd/gdz-18/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-18b/",
+    "target": "https://cinkr.com/hqd/gdz-18b/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-23-1/",
+    "target": "https://cinkr.com/hqd/gdz-23-1/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-23-2/",
+    "target": "https://cinkr.com/hqd/gdz-23-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-23/",
+    "target": "https://cinkr.com/hqd/gdz-23/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-24-1c/",
+    "target": "https://cinkr.com/hqd/gdz-24-1c/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-24-2/",
+    "target": "https://cinkr.com/hqd/gdz-24-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-24-3/",
+    "target": "https://cinkr.com/hqd/gdz-24-3/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-26-1/",
+    "target": "https://cinkr.com/hqd/gdz-26-1/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-26-3-24000rpm/",
+    "target": "https://cinkr.com/hqd/gdz-26-3-24000rpm/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-27-2/",
+    "target": "https://cinkr.com/hqd/gdz-27-2/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/gdz-27/",
+    "target": "https://cinkr.com/hqd/gdz-27/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdf46-18z-1-5-base-mount.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdf46-18z-1-5-base-mount.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdf46-18z-2-2-base-mount.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdf46-18z-2-2-base-mount.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdf46-18z-2-2-housing-mount.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdf46-18z-2-2-housing-mount.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdf65-24z-0-8.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdf65-24z-0-8.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdf80-24z-1-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdf80-24z-1-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdf80-24z-2-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdf80-24z-2-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdf80-24z-2-2b.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdf80-24z-2-2b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk100-12-24z-2-2-4-4.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk100-12-24z-2-2-4-4.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk100-24z-3-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk100-24z-3-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk105-21z-3-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk105-21z-3-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk105-9-21z-2-2-5-0.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk105-9-21z-2-2-5-0.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk110-9-18z-2-2-4-4.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk110-9-18z-2-2-4-4.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk125-12-24z-7-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk125-12-24z-7-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk125-30z-7-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk125-30z-7-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk125-9-15z-5-5-11.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk125-9-15z-5-5-11.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk58-24z-0-8.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk58-24z-0-8.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk80-12-24z-1-2-2-4.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk80-12-24z-1-2-2-4.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk80-24z-1-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk80-24z-1-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk80-24z-2-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk80-24z-2-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdk85-24z-2-2d.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdk85-24z-2-2d.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl100-25-24z-2-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl100-25-24z-2-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl110-30-18z-3-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl110-30-18z-3-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl120-30-24z-5-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl120-30-24z-5-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl125-40-12z-7-5.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl125-40-12z-7-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl40-5-iso20-24z-2-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl40-5-iso20-24z-2-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl70-24z-9-0-iso30-long-nose.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl70-24z-9-0-iso30-long-nose.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl70-24z-9-0-iso30-short-nose.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl70-24z-9-0-iso30-short-nose.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl70-24z-9-0b.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl70-24z-9-0b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdl80-20-24z-2-2b.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdl80-20-24z-2-2b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-17b.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-17b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-18-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-18-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-18.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-18.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-18b.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-18b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-23-1.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-23-1.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-23-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-23-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-23.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-23.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-24-1c.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-24-1c.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-24-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-24-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-24-3.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-24-3.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-26-1.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-26-1.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-26-3-24000rpm.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-26-3-24000rpm.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-27-2.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-27-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/diagrams/gdz-27.webp",
+    "target": "https://cinkr.com/hqd/images/diagrams/gdz-27.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/guides/hqd-air-operating-curve.webp",
+    "target": "https://cinkr.com/hqd/images/guides/hqd-air-operating-curve.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/guides/hqd-gdk-operating-curve.webp",
+    "target": "https://cinkr.com/hqd/images/guides/hqd-gdk-operating-curve.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/guides/hqd-water-operating-curve.webp",
+    "target": "https://cinkr.com/hqd/images/guides/hqd-water-operating-curve.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdf46-18z-1-5-base-mount.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdf46-18z-1-5-base-mount.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdf46-18z-2-2-base-mount.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdf46-18z-2-2-base-mount.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdf46-18z-2-2-housing-mount.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdf46-18z-2-2-housing-mount.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdf65-24z-0-8.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdf65-24z-0-8.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdf80-24z-1-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdf80-24z-1-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdf80-24z-2-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdf80-24z-2-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdf80-24z-2-2b.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdf80-24z-2-2b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk100-12-24z-2-2-4-4.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk100-12-24z-2-2-4-4.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk100-24z-3-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk100-24z-3-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk105-21z-3-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk105-21z-3-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk105-9-21z-2-2-5-0.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk105-9-21z-2-2-5-0.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk110-9-18z-2-2-4-4.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk110-9-18z-2-2-4-4.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk125-12-24z-7-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk125-12-24z-7-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk125-30z-7-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk125-30z-7-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk125-9-15z-5-5-11.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk125-9-15z-5-5-11.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk58-24z-0-8.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk58-24z-0-8.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk80-12-24z-1-2-2-4.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk80-12-24z-1-2-2-4.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk80-24z-1-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk80-24z-1-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk80-24z-2-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk80-24z-2-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdk85-24z-2-2d.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdk85-24z-2-2d.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl100-25-24z-2-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl100-25-24z-2-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl110-30-18z-3-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl110-30-18z-3-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl120-30-24z-5-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl120-30-24z-5-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl125-40-12z-7-5.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl125-40-12z-7-5.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl40-5-iso20-24z-2-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl40-5-iso20-24z-2-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl70-24z-9-0-iso30-long-nose.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl70-24z-9-0-iso30-long-nose.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl70-24z-9-0-iso30-short-nose.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl70-24z-9-0-iso30-short-nose.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl70-24z-9-0b.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl70-24z-9-0b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdl80-20-24z-2-2b.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdl80-20-24z-2-2b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-17b.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-17b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-18-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-18-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-18.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-18.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-18b.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-18b.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-23-1.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-23-1.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-23-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-23-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-23.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-23.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-24-1c.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-24-1c.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-24-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-24-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-24-3.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-24-3.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-26-1.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-26-1.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-26-3-24000rpm.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-26-3-24000rpm.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-27-2.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-27-2.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/images/models/gdz-27.webp",
+    "target": "https://cinkr.com/hqd/images/models/gdz-27.webp"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/privacy-policy/",
+    "target": "https://cinkr.com/hqd/privacy-policy/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/robots.txt",
+    "target": "https://cinkr.com/robots.txt"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/series/gdf/",
+    "target": "https://cinkr.com/hqd/series/gdf/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/series/gdk/",
+    "target": "https://cinkr.com/hqd/series/gdk/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/series/gdl/",
+    "target": "https://cinkr.com/hqd/series/gdl/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/series/gdz/",
+    "target": "https://cinkr.com/hqd/series/gdz/"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/sitemap-0.xml",
+    "target": "https://cinkr.com/hqd/sitemap-0.xml"
+  },
+  {
+    "host": "hqd.cinkr.com",
+    "path": "/sitemap-index.xml",
+    "target": "https://cinkr.com/hqd/sitemap-index.xml"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/",
+    "target": "https://cinkr.com/mpg/"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BbFmXEfr.js",
+    "target": "https://cinkr.com/mpg/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BbFmXEfr.js"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/_astro/image-lightbox.DBBNu-yo.js",
+    "target": "https://cinkr.com/mpg/_astro/image-lightbox.DBBNu-yo.js"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/_astro/index.astro_astro_type_script_index_0_lang.B2ZE-E02.js",
+    "target": "https://cinkr.com/mpg/_astro/index.astro_astro_type_script_index_0_lang.B2ZE-E02.js"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/_astro/nav.BImCYxxV.js",
+    "target": "https://cinkr.com/mpg/_astro/nav.BImCYxxV.js"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/404.html",
+    "target": "https://cinkr.com/mpg/404.html"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/blog/",
+    "target": "https://cinkr.com/mpg/blog/"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/blog/cnc-mpg-handwheel-applications/",
+    "target": "https://cinkr.com/mpg/blog/cnc-mpg-handwheel-applications/"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/blog/mpg-handwheel-4-terminal-vs-6-terminal-wiring/",
+    "target": "https://cinkr.com/mpg/blog/mpg-handwheel-4-terminal-vs-6-terminal-wiring/"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/blog/mpg-handwheel-panel-cutout-and-mounting/",
+    "target": "https://cinkr.com/mpg/blog/mpg-handwheel-panel-cutout-and-mounting/"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/blog/what-is-a-cnc-mpg-handwheel/",
+    "target": "https://cinkr.com/mpg/blog/what-is-a-cnc-mpg-handwheel/"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/brand/favicon.svg",
+    "target": "https://cinkr.com/mpg/brand/favicon.svg"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/brand/logo.svg",
+    "target": "https://cinkr.com/mpg/brand/logo.svg"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/brand/social-card.jpg",
+    "target": "https://cinkr.com/mpg/brand/social-card.jpg"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/black-mpg-handwheel.webp",
+    "target": "https://cinkr.com/mpg/images/black-mpg-handwheel.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/black-silver-angled-comparison.webp",
+    "target": "https://cinkr.com/mpg/images/black-silver-angled-comparison.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/black-silver-front-comparison.webp",
+    "target": "https://cinkr.com/mpg/images/black-silver-front-comparison.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/black-silver-top-comparison.webp",
+    "target": "https://cinkr.com/mpg/images/black-silver-top-comparison.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/mpg-25-100-ppr-pulse-illustration.webp",
+    "target": "https://cinkr.com/mpg/images/mpg-25-100-ppr-pulse-illustration.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/mpg-25-100-ppr-stop-timing.webp",
+    "target": "https://cinkr.com/mpg/images/mpg-25-100-ppr-stop-timing.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/mpg-60-80-dimension-drawing.webp",
+    "target": "https://cinkr.com/mpg/images/mpg-60-80-dimension-drawing.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/mpg-four-six-terminal-comparison.webp",
+    "target": "https://cinkr.com/mpg/images/mpg-four-six-terminal-comparison.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/mpg-rear-mounting-view.webp",
+    "target": "https://cinkr.com/mpg/images/mpg-rear-mounting-view.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/mpg-structure-overview.webp",
+    "target": "https://cinkr.com/mpg/images/mpg-structure-overview.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-mpg-handwheel-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-mpg-handwheel-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-mpg-handwheel-480w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-mpg-handwheel-480w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-mpg-handwheel-720w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-mpg-handwheel-720w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-angled-comparison-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-angled-comparison-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-angled-comparison-480w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-angled-comparison-480w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-angled-comparison-720w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-angled-comparison-720w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-front-comparison-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-front-comparison-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-front-comparison-480w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-front-comparison-480w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-front-comparison-720w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-front-comparison-720w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-top-comparison-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-top-comparison-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-top-comparison-480w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-top-comparison-480w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/black-silver-top-comparison-720w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/black-silver-top-comparison-720w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-25-100-ppr-pulse-illustration-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-25-100-ppr-pulse-illustration-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-25-100-ppr-pulse-illustration-800w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-25-100-ppr-pulse-illustration-800w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-25-100-ppr-stop-timing-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-25-100-ppr-stop-timing-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-25-100-ppr-stop-timing-800w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-25-100-ppr-stop-timing-800w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-60-80-dimension-drawing-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-60-80-dimension-drawing-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-60-80-dimension-drawing-800w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-60-80-dimension-drawing-800w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-four-six-terminal-comparison-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-four-six-terminal-comparison-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-four-six-terminal-comparison-800w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-four-six-terminal-comparison-800w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-rear-mounting-view-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-rear-mounting-view-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-rear-mounting-view-480w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-rear-mounting-view-480w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-rear-mounting-view-720w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-rear-mounting-view-720w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-structure-overview-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-structure-overview-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/mpg-structure-overview-800w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/mpg-structure-overview-800w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/silver-mpg-handwheel-1200w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/silver-mpg-handwheel-1200w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/silver-mpg-handwheel-480w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/silver-mpg-handwheel-480w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/responsive/silver-mpg-handwheel-720w.webp",
+    "target": "https://cinkr.com/mpg/images/responsive/silver-mpg-handwheel-720w.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/images/silver-mpg-handwheel.webp",
+    "target": "https://cinkr.com/mpg/images/silver-mpg-handwheel.webp"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/privacy-policy/",
+    "target": "https://cinkr.com/mpg/privacy-policy/"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/robots.txt",
+    "target": "https://cinkr.com/robots.txt"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/sitemap-0.xml",
+    "target": "https://cinkr.com/mpg/sitemap-0.xml"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/sitemap-index.xml",
+    "target": "https://cinkr.com/mpg/sitemap-index.xml"
+  },
+  {
+    "host": "mpg.cinkr.com",
+    "path": "/styles/no-script.css",
+    "target": "https://cinkr.com/mpg/styles/no-script.css"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/",
+    "target": "https://cinkr.com/richauto/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/_astro/_model_.astro_astro_type_script_index_0_lang.q76k2J9F.js",
+    "target": "https://cinkr.com/richauto/_astro/_model_.astro_astro_type_script_index_0_lang.q76k2J9F.js"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/_astro/HomeFooter.C2RMJiB6.css",
+    "target": "https://cinkr.com/richauto/_astro/HomeFooter.C2RMJiB6.css"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/_astro/index.astro_astro_type_script_index_0_lang.BAJsAA4K.js",
+    "target": "https://cinkr.com/richauto/_astro/index.astro_astro_type_script_index_0_lang.BAJsAA4K.js"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/_astro/rfq.DglX6hvP.js",
+    "target": "https://cinkr.com/richauto/_astro/rfq.DglX6hvP.js"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/404.html",
+    "target": "https://cinkr.com/richauto/404.html"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/a11/",
+    "target": "https://cinkr.com/richauto/a11/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/a12/",
+    "target": "https://cinkr.com/richauto/a12/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/a15/",
+    "target": "https://cinkr.com/richauto/a15/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/a18/",
+    "target": "https://cinkr.com/richauto/a18/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/b11/",
+    "target": "https://cinkr.com/richauto/b11/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/b15/",
+    "target": "https://cinkr.com/richauto/b15/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/b18/",
+    "target": "https://cinkr.com/richauto/b18/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/b51/",
+    "target": "https://cinkr.com/richauto/b51/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/b57/",
+    "target": "https://cinkr.com/richauto/b57/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/b58/",
+    "target": "https://cinkr.com/richauto/b58/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/",
+    "target": "https://cinkr.com/richauto/blog/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/3-axis-vs-4-axis-cnc-controller/",
+    "target": "https://cinkr.com/richauto/blog/3-axis-vs-4-axis-cnc-controller/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/a15-b15-f135-multi-spindle-cnc/",
+    "target": "https://cinkr.com/richauto/blog/a15-b15-multi-spindle-cnc/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/a15-b15-multi-spindle-cnc/",
+    "target": "https://cinkr.com/richauto/blog/a15-b15-multi-spindle-cnc/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/cnc-controller-retrofit-guide/",
+    "target": "https://cinkr.com/richauto/blog/cnc-controller-retrofit-guide/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/dsp-vs-mach3-vs-ncstudio/",
+    "target": "https://cinkr.com/richauto/blog/dsp-vs-mach3-vs-ncstudio/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/machine-applications/",
+    "target": "https://cinkr.com/richauto/blog/machine-applications/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/page/2/",
+    "target": "https://cinkr.com/richauto/blog/page/2/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/page/3/",
+    "target": "https://cinkr.com/richauto/blog/page/3/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/replace-richauto-controller-wiring-checklist/",
+    "target": "https://cinkr.com/richauto/blog/replace-richauto-controller-wiring-checklist/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/replacement-and-support/",
+    "target": "https://cinkr.com/richauto/blog/replacement-and-support/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/reset-richauto-dsp-controller-safely/",
+    "target": "https://cinkr.com/richauto/blog/reset-richauto-dsp-controller-safely/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a11-blank-screen/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a11-blank-screen/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a11-homing-work-zero-tool-setting/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a11-homing-work-zero-tool-setting/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a11-replacement-power-and-interface-checks/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a11-replacement-power-and-interface-checks/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a11-spindle-control-troubleshooting/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a11-spindle-control-troubleshooting/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a11-vs-a18/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a11-vs-a18/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a11-vs-b11/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a11-vs-b11/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a12-plasma-cutting-controller/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a12-plasma-cutting-controller/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-a18-b18-b58-four-axis-rotary-selection/",
+    "target": "https://cinkr.com/richauto/blog/richauto-a18-b18-b58-four-axis-rotary-selection/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-b11-b51-controller-selection/",
+    "target": "https://cinkr.com/richauto/blog/richauto-b11-b51-controller-selection/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-b11-b51-f131-controller-selection/",
+    "target": "https://cinkr.com/richauto/blog/richauto-b11-b51-controller-selection/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-b51-vs-b57/",
+    "target": "https://cinkr.com/richauto/blog/richauto-b51-vs-b57/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-b57-atc-controller/",
+    "target": "https://cinkr.com/richauto/blog/richauto-b57-atc-controller/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-b58-4-axis-rotary-controller/",
+    "target": "https://cinkr.com/richauto/blog/richauto-b58-4-axis-rotary-controller/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-controller-buying-guide/",
+    "target": "https://cinkr.com/richauto/blog/richauto-controller-buying-guide/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-controller-not-working/",
+    "target": "https://cinkr.com/richauto/blog/richauto-controller-not-working/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-controller-price/",
+    "target": "https://cinkr.com/richauto/blog/richauto-controller-price/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-firmware-update/",
+    "target": "https://cinkr.com/richauto/blog/richauto-firmware-update/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-fusion-post-processor/",
+    "target": "https://cinkr.com/richauto/blog/richauto-fusion-post-processor/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-manuals-wiring-firmware-downloads/",
+    "target": "https://cinkr.com/richauto/blog/richauto-manuals-wiring-firmware-downloads/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-model-naming-guide/",
+    "target": "https://cinkr.com/richauto/blog/richauto-model-naming-guide/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-usb-drive-not-recognized/",
+    "target": "https://cinkr.com/richauto/blog/richauto-usb-drive-not-recognized/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/richauto-wiring-diagram/",
+    "target": "https://cinkr.com/richauto/blog/richauto-wiring-diagram/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/selection-and-comparison/",
+    "target": "https://cinkr.com/richauto/blog/selection-and-comparison/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/blog/what-is-a-dsp-controller/",
+    "target": "https://cinkr.com/richauto/blog/what-is-a-dsp-controller/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/favicon.svg",
+    "target": "https://cinkr.com/richauto/brand/favicon.svg"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-apple-touch-icon.png",
+    "target": "https://cinkr.com/richauto/brand/richauto-apple-touch-icon.png"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-favicon.png",
+    "target": "https://cinkr.com/richauto/brand/richauto-favicon.png"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-logo-dark.svg",
+    "target": "https://cinkr.com/richauto/brand/richauto-logo-dark.svg"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-logo-dark.webp",
+    "target": "https://cinkr.com/richauto/brand/richauto-logo-dark.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-logo-light.svg",
+    "target": "https://cinkr.com/richauto/brand/richauto-logo-light.svg"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-logo-light.webp",
+    "target": "https://cinkr.com/richauto/brand/richauto-logo-light.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-mark.svg",
+    "target": "https://cinkr.com/richauto/brand/richauto-mark.svg"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-social-card.png",
+    "target": "https://cinkr.com/richauto/brand/richauto-social-card.png"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/brand/richauto-social-card.svg",
+    "target": "https://cinkr.com/richauto/brand/richauto-social-card.svg"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/A11_Standard_Upgrade_Program-_Q13-1608.pkg_.zip",
+    "target": "https://cinkr.com/richauto/downloads/A11_Standard_Upgrade_Program-_Q13-1608.pkg_.zip"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/A12-Wiring-Reference.pdf",
+    "target": "https://cinkr.com/richauto/downloads/A12-Wiring-Reference.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/A1X_Motion_Control_SystemA11_A12_A15_A18_Manual.pdf",
+    "target": "https://cinkr.com/richauto/downloads/A1X_Motion_Control_SystemA11_A12_A15_A18_Manual.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/B11-Wiring-Reference.pdf",
+    "target": "https://cinkr.com/richauto/downloads/B11-Wiring-Reference.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/B15-Wiring-Reference.pdf",
+    "target": "https://cinkr.com/richauto/downloads/B15-Wiring-Reference.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/B18-Wiring-Reference.pdf",
+    "target": "https://cinkr.com/richauto/downloads/B18-Wiring-Reference.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/B5X_Motion_Control_System.pdf",
+    "target": "https://cinkr.com/richauto/downloads/B5X_Motion_Control_System.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/DSP-A11-Manual.pdf",
+    "target": "https://cinkr.com/richauto/downloads/DSP-A11-Manual.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/downloads/richauto-a18-manual.pdf",
+    "target": "https://cinkr.com/richauto/downloads/richauto-a18-manual.pdf"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/favicon.ico",
+    "target": "https://cinkr.com/richauto/favicon.ico"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/f1x-cover.svg",
+    "target": "https://cinkr.com/richauto/images/f1x-cover.svg"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a11-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/a11-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a11-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/a11-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a11-3.webp",
+    "target": "https://cinkr.com/richauto/images/models/a11-3.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a11-4.webp",
+    "target": "https://cinkr.com/richauto/images/models/a11-4.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a12-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/a12-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a12-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/a12-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a12-3.webp",
+    "target": "https://cinkr.com/richauto/images/models/a12-3.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a12-4.webp",
+    "target": "https://cinkr.com/richauto/images/models/a12-4.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a15-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/a15-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a15-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/a15-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a15-3.webp",
+    "target": "https://cinkr.com/richauto/images/models/a15-3.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a15-4.webp",
+    "target": "https://cinkr.com/richauto/images/models/a15-4.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a18-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/a18-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a18-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/a18-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a18-3.webp",
+    "target": "https://cinkr.com/richauto/images/models/a18-3.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/a18-4.webp",
+    "target": "https://cinkr.com/richauto/images/models/a18-4.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b11-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/b11-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b11-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/b11-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b11-3.webp",
+    "target": "https://cinkr.com/richauto/images/models/b11-3.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b11-4.webp",
+    "target": "https://cinkr.com/richauto/images/models/b11-4.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b15-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/b15-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b15-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/b15-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b15-3.webp",
+    "target": "https://cinkr.com/richauto/images/models/b15-3.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b15-4.webp",
+    "target": "https://cinkr.com/richauto/images/models/b15-4.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b18-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/b18-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b18-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/b18-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b18-3.webp",
+    "target": "https://cinkr.com/richauto/images/models/b18-3.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b18-4.webp",
+    "target": "https://cinkr.com/richauto/images/models/b18-4.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b51-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/b51-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b51-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/b51-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b57-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/b57-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b57-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/b57-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b58-1.webp",
+    "target": "https://cinkr.com/richauto/images/models/b58-1.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/images/models/b58-2.webp",
+    "target": "https://cinkr.com/richauto/images/models/b58-2.webp"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/manuals/",
+    "target": "https://cinkr.com/richauto/manuals/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/privacy-policy/",
+    "target": "https://cinkr.com/richauto/privacy-policy/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/robots.txt",
+    "target": "https://cinkr.com/robots.txt"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/series/a1x/",
+    "target": "https://cinkr.com/richauto/series/a1x/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/series/b1x/",
+    "target": "https://cinkr.com/richauto/series/b1x/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/series/b5x/",
+    "target": "https://cinkr.com/richauto/series/b5x/"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/sitemap-0.xml",
+    "target": "https://cinkr.com/richauto/sitemap-0.xml"
+  },
+  {
+    "host": "richauto.cinkr.com",
+    "path": "/sitemap-index.xml",
+    "target": "https://cinkr.com/richauto/sitemap-index.xml"
+  }
 ]

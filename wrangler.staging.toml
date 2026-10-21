@@ -3,5 +3,9 @@ main = "src/worker.ts"
 compatibility_date = "2026-10-21"
 workers_dev = true
 
+routes = [
+  { pattern = "staging.cinkr.com/*", zone_name = "cinkr.com" }
+]
+
 [vars]
 ENVIRONMENT = "staging"
