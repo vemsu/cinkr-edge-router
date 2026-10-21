@@ -81,3 +81,33 @@ These aliases were used to validate the subdirectory builds before production:
 
 The 301 redirect manifest must remain deployed for at least one year after the
 production cutover.
+
+## Post-cutover production record
+
+Captured after cutover on 2026-10-21:
+
+| Project | Migration production deployment |
+| --- | --- |
+| `cinkr-home` | `af076d37-ea00-4748-b71e-2ea7d269f9ac` |
+| `cinkr-hmi` | `77ef1b4e-358c-48b8-b274-0447f1285bd9` |
+| `cinkr-hqd` | `e4bb6fb2-4a03-44e5-a45d-c5e6ac008002` |
+| `cinkr-richauto` | `d3b13826-5ecb-4fa3-890a-90352359c630` |
+| `cinkr-mpg` | `0bd8bf63-6b0b-4a85-8d73-ec665ad3be61` |
+
+- Production Worker: `cinkr-edge-router`
+- Production Worker version: `d062696f-eff6-4231-9e70-6dcb66504325`
+- Staging Worker version: `5c8bc296-e929-428c-afbf-cccd1c0dc4cb`
+
+### Production routes
+
+| Pattern | Route ID |
+| --- | --- |
+| `cinkr.com/*` | `7effcd0da67e4b8a8facbfad72f3b70b` |
+| `www.cinkr.com/*` | `9dcaa462d18d4e07aaa396c3924599e9` |
+| `hmi.cinkr.com/*` | `8da5aa36db1f479da09e51c4a3b8f6c7` |
+| `hqd.cinkr.com/*` | `bc6997a55a334aebaaa4cdd482048f35` |
+| `richauto.cinkr.com/*` | `62bbbf1c74e34c23b3a3f37a35a1ef4c` |
+| `mpg.cinkr.com/*` | `bb92f34fa4514e61829dbed7b770da2f` |
+
+The Pages custom domains intentionally remain attached during the observation
+period. Worker routes take precedence and preserve the recorded rollback path.
