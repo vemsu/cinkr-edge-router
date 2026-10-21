@@ -9,7 +9,7 @@
 | HQD | Astro check 0 errors/0 warnings/1 deprecated-API hint; 54/54 tests; all four audits passed |
 | RichAuto | Astro check 0/0/0; 52/52 tests; build and SEO/accessibility contracts passed |
 | MPG | Astro check 0/0/0; 148/148 tests; build audit passed; 7 indexable pages |
-| Edge router | 828 exact redirects; 22/22 tests; manifest validation passed |
+| Edge router | 828 exact redirects; 25/25 tests; manifest validation passed |
 
 ## HTTP acceptance
 
@@ -17,7 +17,7 @@ Production and staging crawls both passed:
 
 | Environment | Pages | Assets | Redirect checks | 404 checks | Page header checks |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Production | 255 | 242 | 14 | 9 | 4 |
+| Production | 255 | 242 | 16 | 10 | 4 |
 | Staging | 255 | 242 | 6 | 5 | 4 |
 
 Production checks covered:
@@ -30,10 +30,11 @@ Production checks covered:
   `Referrer-Policy`, and `Permissions-Policy` are present.
 - `/hmi/` and `/hmi/gl070/` redirect to Kinco in one hop.
 - Product `robots.txt` URLs redirect to the single site-level robots file.
-- Unknown paths on `cinkr.com`, product paths, and all four legacy hosts return
-  404.
+- Unknown paths on `cinkr.com`, product paths, and all legacy hosts return 404.
 - Legacy product roots and representative model, guide, and asset URLs return
   one-hop 301 responses to the canonical subdirectory.
+- `www.richauto.cinkr.com` now has its own Worker route. Known paths go directly
+  to `https://cinkr.com/richauto/...` in one hop, with the query string retained.
 - Unknown legacy-host paths no longer fall back to the main website.
 
 ## Real Chromium acceptance

@@ -18,7 +18,11 @@ const legacyHosts = {
   "hmi.cinkr.com": "kinco",
   "hqd.cinkr.com": "hqd",
   "richauto.cinkr.com": "richauto",
+  "www.richauto.cinkr.com": "richauto",
   "mpg.cinkr.com": "mpg"
+};
+const legacyHostAliases = {
+  "www.richauto.cinkr.com": "richauto.cinkr.com"
 };
 const securityHeaders = [
   "content-security-policy",
@@ -113,7 +117,8 @@ expect(mainMissing.response.status === 404, "/unknown: expected 404, received " 
 
 if (mode === "production") {
   for (const [host, product] of Object.entries(legacyHosts)) {
-    const hostRedirects = redirectManifest.filter((entry) => entry.host === host);
+    const manifestHost = legacyHostAliases[host] ?? host;
+    const hostRedirects = redirectManifest.filter((entry) => entry.host === manifestHost);
     const rootRedirect = hostRedirects.find((entry) => entry.path === "/");
     const deepRedirect = hostRedirects.find((entry) => entry.path !== "/" && entry.target.startsWith(`https://cinkr.com/${product}/`));
     for (const entry of [rootRedirect, deepRedirect].filter(Boolean)) {

@@ -98,6 +98,25 @@ Captured after cutover on 2026-10-21:
 - Production Worker version: `d062696f-eff6-4231-9e70-6dcb66504325`
 - Staging Worker version: `5c8bc296-e929-428c-afbf-cccd1c0dc4cb`
 
+### Main-branch automatic rollout
+
+Captured after the six migration branches were fast-forwarded to `main` and the
+RichAuto Cloudflare build compatibility fix was deployed:
+
+| Project | Main commit | Production deployment |
+| --- | --- | --- |
+| `cinkr-home` | `3377328` | `d05524c1-ff21-4f0f-8f7e-94a3fd8373cc` |
+| `cinkr-hmi` | `8c32cf8` | `2a3a575c-3677-4dd6-be60-d8f8caafb246` |
+| `cinkr-hqd` | `e34a45a` | `2f70d00b-8dc2-437c-bb69-52216afbcf04` |
+| `cinkr-richauto` | `2db4a54` | `556cac43-7925-4ecf-822a-0e4d984fa51d` |
+| `cinkr-mpg` | `d619368` | `de5b0c7a-8926-44a7-837d-4c1c74723853` |
+
+- Production Worker after the RichAuto `www` route fix:
+  `0df4e1c0-3d3b-409b-a49a-5ee943a54427`
+- RichAuto's first automatic build failed because its build helper imported a
+  `.ts` module under Node 22.12. The helper now imports `site.config.mjs`; the
+  exact Cloudflare Node version rebuild passed.
+
 ### Production routes
 
 | Pattern | Route ID |
@@ -107,7 +126,13 @@ Captured after cutover on 2026-10-21:
 | `hmi.cinkr.com/*` | `8da5aa36db1f479da09e51c4a3b8f6c7` |
 | `hqd.cinkr.com/*` | `bc6997a55a334aebaaa4cdd482048f35` |
 | `richauto.cinkr.com/*` | `62bbbf1c74e34c23b3a3f37a35a1ef4c` |
+| `www.richauto.cinkr.com/*` | Managed in the Cloudflare dashboard |
 | `mpg.cinkr.com/*` | `bb92f34fa4514e61829dbed7b770da2f` |
 
 The Pages custom domains intentionally remain attached during the observation
 period. Worker routes take precedence and preserve the recorded rollback path.
+
+The legacy zone-level redirect rule and account-level bulk redirect that
+previously sent `www.richauto.cinkr.com` to `richauto.cinkr.com` are disabled.
+Requests now enter the Worker route and redirect directly to the canonical
+`https://cinkr.com/richauto/...` URL in one hop.
