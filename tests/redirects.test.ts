@@ -11,6 +11,14 @@ describe("legacy redirects", () => {
     expect(response.status).toBe(301);
     expect(response.headers.get("location")).toBe("https://cinkr.com/mpg/?source=old");
   });
+  it.each([
+    ["https://www.richauto.cinkr.com/?source=old", "https://cinkr.com/richauto/?source=old"],
+    ["https://www.richauto.cinkr.com/a11/?source=old", "https://cinkr.com/richauto/a11/?source=old"]
+  ])("redirects the RichAuto www alias %s in one hop", async (source, expected) => {
+    const response = await worker.fetch(new Request(source), {});
+    expect(response.status).toBe(301);
+    expect(response.headers.get("location")).toBe(expected);
+  });
   it("does not turn an unknown legacy path into a homepage redirect", async () => {
     const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response("MPG not found", { status: 404 }));
     const response = await worker.fetch(new Request("https://mpg.cinkr.com/not-known/"), {});
@@ -23,6 +31,7 @@ describe("legacy redirects", () => {
     ["hmi.cinkr.com", "kinco"],
     ["hqd.cinkr.com", "hqd"],
     ["richauto.cinkr.com", "richauto"],
+    ["www.richauto.cinkr.com", "richauto"],
     ["mpg.cinkr.com", "mpg"]
   ])("returns a product 404 for an unknown %s path", async (host, product) => {
     const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response("not found", { status: 404 }));

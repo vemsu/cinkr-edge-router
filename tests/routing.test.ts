@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { LEGACY_HOST_PRODUCTS, originFor, productRoute } from "../src/routes";
+import { LEGACY_HOST_ALIASES, LEGACY_HOST_PRODUCTS, originFor, productRoute } from "../src/routes";
 import worker from "../src/worker";
 
 const origins = { main: "https://main.example", kinco: "https://kinco.example", hqd: "https://hqd.example", richauto: "https://richauto.example", mpg: "https://mpg.example" };
@@ -26,7 +26,11 @@ describe("product routing", () => {
       "hmi.cinkr.com": "kinco",
       "hqd.cinkr.com": "hqd",
       "richauto.cinkr.com": "richauto",
+      "www.richauto.cinkr.com": "richauto",
       "mpg.cinkr.com": "mpg"
+    });
+    expect(LEGACY_HOST_ALIASES).toEqual({
+      "www.richauto.cinkr.com": "richauto.cinkr.com"
     });
   });
   it("redirects product robots requests to the single site-level robots file", async () => {

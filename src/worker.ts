@@ -1,13 +1,14 @@
 import legacyRedirects from "../manifests/legacy-redirects.json";
 import policies from "../manifests/origin-policy.json";
-import { LEGACY_HOST_PRODUCTS, originFor, PUBLIC_HOSTS, type ProductRoute } from "./routes";
+import { LEGACY_HOST_ALIASES, LEGACY_HOST_PRODUCTS, originFor, PUBLIC_HOSTS, type ProductRoute } from "./routes";
 
 type Environment = { ENVIRONMENT?: "production" | "staging" };
 type LegacyRedirect = { host: string; path: string; target: string };
 const redirects = new Map((legacyRedirects as LegacyRedirect[]).map((entry) => [`${entry.host}${entry.path}`, entry.target]));
 
 function redirectFor(url: URL): Response | null {
-  const target = redirects.get(`${url.hostname}${url.pathname}`);
+  const redirectHost = LEGACY_HOST_ALIASES[url.hostname] ?? url.hostname;
+  const target = redirects.get(`${redirectHost}${url.pathname}`);
   if (!target) return null;
   const destination = new URL(target);
   destination.search = url.search;
