@@ -1,0 +1,7 @@
+[
+  { "host": "hmi.cinkr.com", "path": "/", "target": "https://cinkr.com/kinco/" },
+  { "host": "hqd.cinkr.com", "path": "/", "target": "https://cinkr.com/hqd/" },
+  { "host": "richauto.cinkr.com", "path": "/", "target": "https://cinkr.com/richauto/" },
+  { "host": "mpg.cinkr.com", "path": "/", "target": "https://cinkr.com/mpg/" },
+  { "host": "cinkr.com", "path": "/hmi/", "target": "https://cinkr.com/kinco/" }
+]

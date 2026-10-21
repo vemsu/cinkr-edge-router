@@ -1,0 +1,17 @@
+{
+  "name": "cinkr-edge-router",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npx vitest@4.1.11 run",
+    "test:watch": "npx vitest@4.1.11",
+    "validate": "node scripts/validate-manifest.mjs",
+    "check": "npm run validate && npm run test"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20261014.0",
+    "typescript": "^5.9.3",
+    "vitest": "4.1.11",
+    "wrangler": "4.151.3"
+  }
+}

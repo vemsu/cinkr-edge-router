@@ -1,0 +1,16 @@
+{
+  "production": {
+    "main": "https://cinkr-home.pages.dev",
+    "kinco": "https://cinkr-hmi.pages.dev",
+    "hqd": "https://cinkr-hqd.pages.dev",
+    "richauto": "https://cinkr-richauto.pages.dev",
+    "mpg": "https://cinkr-mpg.pages.dev"
+  },
+  "staging": {
+    "main": "https://cinkr-home.pages.dev",
+    "kinco": "https://cinkr-hmi.pages.dev",
+    "hqd": "https://cinkr-hqd.pages.dev",
+    "richauto": "https://cinkr-richauto.pages.dev",
+    "mpg": "https://migration-subdirectory-poc.cinkr-mpg.pages.dev"
+  }
+}
