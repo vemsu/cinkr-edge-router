@@ -69,14 +69,17 @@ These aliases were used to validate the subdirectory builds before production:
 ## Rollback sequence
 
 1. Remove the production routes for `cinkr.com`, `www.cinkr.com`,
-   `hmi.cinkr.com`, `hqd.cinkr.com`, `richauto.cinkr.com`, and
-   `mpg.cinkr.com` from `cinkr-edge-router`.
+   `hmi.cinkr.com`, `hqd.cinkr.com`, `richauto.cinkr.com`,
+   `www.richauto.cinkr.com`, and `mpg.cinkr.com` from
+   `cinkr-edge-router`.
 2. Restore each Pages production deployment listed above if its project was
    replaced after the baseline.
-3. Confirm the original custom-domain mappings and the DNS values in this file.
-4. Verify HTTP 200 on `/`, each old product-domain root, representative model
+3. Re-enable the recorded zone-level and bulk redirect for
+   `www.richauto.cinkr.com` if reverting to the pre-cutover topology.
+4. Confirm the original custom-domain mappings and the DNS values in this file.
+5. Verify HTTP 200 on `/`, each old product-domain root, representative model
    pages, CSS, JavaScript, and images.
-5. Keep the new Pages deployments and Worker available but unrouted for
+6. Keep the new Pages deployments and Worker available but unrouted for
    diagnosis; they are not part of the public rollback path.
 
 The 301 redirect manifest must remain deployed for at least one year after the
