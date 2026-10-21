@@ -20,3 +20,26 @@ Observation window: 2026-10-22 through 2026-10-28.
 - Heartbeat automation `cinkr-7` will record production and Search Console
   checks daily from 2026-10-22 through 2026-10-28, notifying only on regression,
   required action, or the final summary.
+
+## Search Console URL Inspection
+
+URL Inspection was completed in `sc-domain:cinkr.com` for the home page, the
+four product sections, a Kinco product and article page, a RichAuto model page,
+an MPG article page, and a deliberately unknown URL.
+
+- `https://cinkr.com/` is indexed. Google previously crawled it on
+  2026-10-17, its declared canonical is `https://cinkr.com/`, and Google selects
+  the inspected URL as canonical.
+- `https://cinkr.com/kinco/`, `/hqd/`, `/richauto/`, and `/mpg/` were not yet
+  known to Google at inspection time. Search Console showed no crawl yet and no
+  referring sitemap for their new URLs.
+- Indexing requests were successfully accepted for all four product sections.
+  Search Console reported that each URL was added to the priority crawl queue.
+- The representative Kinco product and article, RichAuto model, and MPG article
+  URLs had the same not-yet-crawled status. The unknown URL remained unindexed,
+  as expected.
+
+This records a normal indexing lag for the newly introduced subdirectories, not
+an HTTP or sitemap delivery failure. The submitted sitemap endpoints continue to
+return valid XML, and the heartbeat automation will observe Search Console and
+production daily during the migration window.
