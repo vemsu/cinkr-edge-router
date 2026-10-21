@@ -17,5 +17,6 @@ Observation window: 2026-10-22 through 2026-10-28.
   newly created `cinkr.com` sitemap entries as unable to fetch. Their HTTP
   responses are valid, so this remains under observation rather than being
   treated as a crawlable-content failure.
-- Daily automation will record production and Search Console checks for seven
-  days, notifying only on regression, required action, or the final summary.
+- Heartbeat automation `cinkr-7` will record production and Search Console
+  checks daily from 2026-10-22 through 2026-10-28, notifying only on regression,
+  required action, or the final summary.
