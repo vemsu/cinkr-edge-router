@@ -43,3 +43,22 @@ This records a normal indexing lag for the newly introduced subdirectories, not
 an HTTP or sitemap delivery failure. The submitted sitemap endpoints continue to
 return valid XML, and the heartbeat automation will observe Search Console and
 production daily during the migration window.
+
+## 2026-10-22 daily check
+
+- Production HTTP acceptance passed: 255 pages, 244 assets, 16 redirect checks,
+  10 not-found checks, and 4 full security-header checks.
+- `/hmi/` and `/hmi/gl070/` returned one-hop 301 responses to the canonical
+  Kinco paths. Representative HMI, HQD, RichAuto, `www.richauto`, and MPG
+  legacy URLs also returned one-hop 301 responses with query strings preserved
+  where supplied.
+- An unknown production path returned a real HTML 404.
+- The five public section pages returned 200 with the expected self-canonical
+  URLs and no `noindex`.
+- All five submitted sitemap indexes and the site-level `robots.txt` returned
+  200 to a Googlebot user agent; each sitemap index returned
+  `application/xml`.
+- Search Console now reports the Kinco sitemap as successful, last read
+  2026-10-22, with 132 discovered URLs. The home, HQD, RichAuto, and MPG sitemap
+  indexes still show `unable to fetch`; this remains an indexing-processing
+  state under observation because their public responses are valid.
