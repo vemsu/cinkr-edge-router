@@ -62,3 +62,24 @@ production daily during the migration window.
   2026-10-22, with 132 discovered URLs. The home, HQD, RichAuto, and MPG sitemap
   indexes still show `unable to fetch`; this remains an indexing-processing
   state under observation because their public responses are valid.
+
+## 2026-10-23 daily check
+
+- The first full production crawl attempt stopped on a transient connection
+  timeout. Three immediate homepage retries returned 200, and a repeat of the
+  same full crawl passed with 255 pages, 244 assets, 16 redirect checks,
+  10 not-found checks, and 4 full security-header checks.
+- `/hmi/` and `/hmi/gl070/` returned one-hop 301 responses to the canonical
+  Kinco paths. Representative HMI, HQD, RichAuto, `www.richauto`, and MPG
+  legacy URLs also returned one-hop 301 responses with query strings preserved
+  where supplied. An unknown production path returned a real HTML 404.
+- The five public section pages returned 200 with the expected self-canonical
+  URLs and no `noindex`.
+- All five submitted sitemap indexes and the site-level `robots.txt` returned
+  200 to a Googlebot user agent; each sitemap index returned
+  `application/xml`.
+- Search Console now reports both the home sitemap and the Kinco sitemap as
+  successful, last read 2026-10-23 and 2026-10-22 respectively. They discovered
+  2 and 132 URLs. The HQD, RichAuto, and MPG sitemap indexes still show
+  `unable to fetch`; this remains under observation because their public
+  responses are valid.
