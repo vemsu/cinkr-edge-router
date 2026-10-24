@@ -83,3 +83,21 @@ production daily during the migration window.
   2 and 132 URLs. The HQD, RichAuto, and MPG sitemap indexes still show
   `unable to fetch`; this remains under observation because their public
   responses are valid.
+
+## 2026-10-24 daily check
+
+- Production HTTP acceptance passed: 255 pages, 244 assets, 16 redirect checks,
+  10 not-found checks, and 4 full security-header checks.
+- `/hmi/` and `/hmi/gl070/` returned one-hop 301 responses to the canonical
+  Kinco paths. Representative HMI, HQD, RichAuto, `www.richauto`, and MPG
+  legacy URLs also returned one-hop 301 responses with query strings preserved
+  where supplied. An unknown production path returned a real HTML 404.
+- The five public section pages returned 200 with the expected self-canonical
+  URLs and no `noindex`.
+- All five submitted sitemap indexes and the site-level `robots.txt` returned
+  200 to a Googlebot user agent; each sitemap index returned
+  `application/xml`.
+- Search Console now reports all five `cinkr.com` sitemap indexes as successful.
+  The latest reads discovered 2 home URLs, 132 Kinco URLs, 64 HQD URLs,
+  48 RichAuto URLs, and 7 MPG URLs. No submitted sitemap remains in the
+  `unable to fetch` state.
