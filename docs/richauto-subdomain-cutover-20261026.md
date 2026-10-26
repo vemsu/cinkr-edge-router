@@ -38,17 +38,19 @@ Status: candidate implementation in progress; production not changed.
 
 ## DNS and redirect rules
 
-- `richauto.cinkr.com` DNS record: Pending authenticated capture.
-- `www.richauto.cinkr.com` DNS record: Pending authenticated capture.
-- Existing `www.richauto.cinkr.com` Single Redirect, Bulk Redirect, and Page Rule
-  state: Pending authenticated capture.
+The `www` Single Redirect pre-existed on the `cinkr.com` zone:
 
-The target `www` rule is:
-
+- Rule ID: `6c2f82da101c4ae5aa7dd39ceee4cc4e`
+- Name: `CINKR canonical www.richauto to RichAuto apex`
 - Expression: `http.host eq "www.richauto.cinkr.com"`
 - Target: `concat("https://richauto.cinkr.com", http.request.uri.path)`
 - Status: `301`
 - Preserve query string: enabled
+- Enabled state before cutover: disabled
+
+The target expression was corrected from an earlier value that appended the
+query string explicitly. Query-string preservation remains enabled at the rule
+level, so the query is appended exactly once.
 
 ## Production response baseline
 
