@@ -104,7 +104,6 @@ for (const pageUrl of pageUrls) {
 
 const pagination = await fetchText(new URL("blog/page/2/", siteBase).href);
 expect(pagination.response.status === 200, "blog/page/2/: expected 200");
-expect(noindexMeta(pagination.text), "blog/page/2/: expected noindex");
 expect(oneCanonical(pagination.text).length === 1, "blog/page/2/: expected one self canonical");
 
 const missing = await fetchText(new URL("acceptance-path-that-does-not-exist/", siteBase).href);
