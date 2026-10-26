@@ -222,8 +222,7 @@ Google Search Console, domain property `sc-domain:cinkr.com`:
 
 - `https://hqd.cinkr.com/sitemap-index.xml` was submitted successfully and
   discovered 64 pages.
-- The new HQD homepage, a product page, and a guide were live-tested
-  successfully.
+- A live test for the new HQD homepage passed.
 - The homepage is indexed, and Google selected its self-referencing canonical.
 - `https://hqd.cinkr.com/gdz-23/` was discovered from the new sitemap. Its
   indexing request was submitted on 2026-10-26.
