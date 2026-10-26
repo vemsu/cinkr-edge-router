@@ -21,7 +21,8 @@ function retiredSubdomainRedirect(url: URL, env: Environment): Response | null {
   const targets: Readonly<Record<string, string>> = {
     "/kinco": "https://kinco.cinkr.com",
     "/hmi": "https://kinco.cinkr.com",
-    "/richauto": "https://richauto.cinkr.com"
+    "/richauto": "https://richauto.cinkr.com",
+    "/hqd": "https://hqd.cinkr.com"
   };
   const route = Object.keys(targets).find((prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`));
   if (!route) return null;
@@ -40,7 +41,7 @@ function retiredHostRedirect(url: URL): Response | null {
 }
 
 function canonicalPathRedirect(url: URL): Response | null {
-  for (const product of ["hqd", "mpg"]) {
+  for (const product of ["mpg"]) {
     if (url.pathname === `/${product}/robots.txt`) return Response.redirect(new URL("/robots.txt", url.origin), 301);
   }
   return null;

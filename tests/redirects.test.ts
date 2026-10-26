@@ -15,6 +15,11 @@ describe("legacy redirects", () => {
     expect(legacyRedirects.some((entry) => entry.host === "richauto.cinkr.com")).toBe(false);
     expect(legacyRedirects.some((entry) => entry.host === "www.richauto.cinkr.com")).toBe(false);
   });
+  it("keeps HQD out of the retired host manifest and product origins", () => {
+    expect(legacyRedirects.some((entry) => entry.host === "hqd.cinkr.com")).toBe(false);
+    expect("hqd" in policies.production).toBe(false);
+    expect("hqd" in policies.staging).toBe(false);
+  });
   it("does not turn an unknown legacy path into a homepage redirect", async () => {
     const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response("MPG not found", { status: 404 }));
     const response = await worker.fetch(new Request("https://mpg.cinkr.com/not-known/"), {});
@@ -23,15 +28,14 @@ describe("legacy redirects", () => {
     expect(fetchMock).toHaveBeenCalledOnce();
     expect((fetchMock.mock.calls[0][0] as Request).url).toBe(`${policies.production.mpg}/mpg/__legacy_host_unmapped__`);
   });
-  it.each([
-    ["hqd.cinkr.com", "hqd"],
-    ["mpg.cinkr.com", "mpg"]
-  ])("returns a product 404 for an unknown %s path", async (host, product) => {
+  it("returns a product 404 for an unknown mpg path", async () => {
+    const host = "mpg.cinkr.com";
+    const product = "mpg";
     const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response("not found", { status: 404 }));
     const response = await worker.fetch(new Request(`https://${host}/unknown-deep/path/`), { ENVIRONMENT: "production" });
     expect(response.status).toBe(404);
     expect(fetchMock).toHaveBeenCalledOnce();
-    expect((fetchMock.mock.calls[0][0] as Request).url).toBe(`${policies.production[product as keyof typeof policies.production]}/${product}/__legacy_host_unmapped__`);
+    expect((fetchMock.mock.calls[0][0] as Request).url).toBe(`${policies.production[product]}/${product}/__legacy_host_unmapped__`);
   });
   it("redirects every unknown HMI host path to the Kinco subdomain without fetching an origin", async () => {
     const fetchMock = vi.spyOn(globalThis, "fetch");

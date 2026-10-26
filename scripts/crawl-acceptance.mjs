@@ -13,9 +13,8 @@ const base = new URL(baseArg ?? defaultBase);
 if (!base.pathname.endsWith("/")) base.pathname += "/";
 
 const redirectManifest = JSON.parse(await readFile(new URL("../manifests/legacy-redirects.json", import.meta.url), "utf8"));
-const products = ["hqd", "mpg"];
+const products = ["mpg"];
 const legacyHosts = {
-  "hqd.cinkr.com": "hqd",
   "mpg.cinkr.com": "mpg"
 };
 const securityHeaders = [
@@ -135,6 +134,20 @@ for (const [path, expected] of richautoRedirects) {
 }
 const richautoOther = await get("/richauto-other/");
 expect(richautoOther.response.status === 404, "/richauto-other/: must not match the retired prefix");
+
+const hqdRedirects = [
+  ["/hqd", "https://hqd.cinkr.com/"],
+  ["/hqd/", "https://hqd.cinkr.com/"],
+  ["/hqd/gdz-23/?source=legacy", "https://hqd.cinkr.com/gdz-23/?source=legacy"]
+];
+for (const [path, expected] of hqdRedirects) {
+  const { response } = await get(path);
+  checked.redirects += 1;
+  expect(response.status === 301, `${path}: expected 301, received ${response.status}`);
+  expect(response.headers.get("location") === expected, `${path}: wrong redirect target`);
+}
+const hqdOther = await get("/hqd-other/");
+expect(hqdOther.response.status === 404, "/hqd-other/: must not match the retired prefix");
 
 const mainMissing = await get("/acceptance-path-that-does-not-exist/");
 checked.notFound += 1;

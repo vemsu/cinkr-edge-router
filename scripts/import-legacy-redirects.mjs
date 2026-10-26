@@ -5,11 +5,10 @@ import { fileURLToPath } from "node:url";
 const inputs = [
   { file: process.argv[2], host: "cinkr.com", basePath: "", targetOrigin: "https://cinkr.com" },
   { file: process.argv[3], dist: process.argv[4], host: "hmi.cinkr.com", basePath: "", targetOrigin: "https://kinco.cinkr.com" },
-  { file: process.argv[5], dist: process.argv[6], host: "hqd.cinkr.com", basePath: "/hqd", targetOrigin: "https://cinkr.com" },
-  { file: process.argv[7], dist: process.argv[8], host: "mpg.cinkr.com", basePath: "/mpg", targetOrigin: "https://cinkr.com" }
+  { file: process.argv[5], dist: process.argv[6], host: "mpg.cinkr.com", basePath: "/mpg", targetOrigin: "https://cinkr.com" }
 ];
 
-if (inputs.some(({ file, dist }) => !file || (dist !== undefined && !dist))) throw new Error("Usage: import-legacy-redirects.mjs <home-redirects> <kinco-redirects> <kinco-dist> <hqd-redirects> <hqd-dist> <mpg-redirects> <mpg-dist>");
+if (inputs.some(({ file, dist }) => !file || (dist !== undefined && !dist))) throw new Error("Usage: import-legacy-redirects.mjs <home-redirects> <kinco-redirects> <kinco-dist> <mpg-redirects> <mpg-dist>");
 
 const redirects = new Map();
 const allowedOrigins = new Set(["https://cinkr.com", "https://kinco.cinkr.com"]);
@@ -59,7 +58,7 @@ for (const { file, dist, host, basePath, targetOrigin } of inputs) {
 }
 
 add("hmi.cinkr.com", "/robots.txt", "/robots.txt", "https://kinco.cinkr.com");
-for (const host of ["hqd.cinkr.com", "mpg.cinkr.com"]) add(host, "/robots.txt", "/robots.txt");
+add("mpg.cinkr.com", "/robots.txt", "/robots.txt");
 
 const output = [...redirects].map(([key, target]) => {
   const slash = key.indexOf("/", 1);
