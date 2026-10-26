@@ -11,7 +11,7 @@ cleanup completed on 2026-10-26.
 
 ## Git and deployment
 
-| Repository | Pre-cutover `main` | Candidate commit | Final `origin/main` |
+| Repository | Pre-cutover `main` | Candidate commit | Cutover implementation commit |
 | --- | --- | --- | --- |
 | `02-Cinkr RichAuto` | `6663387` | `9c831e3` | `9c831e3` |
 | `01-Cinkr home` | `e3823b2` | `c5a8fb5` | `c5a8fb5` |
