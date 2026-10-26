@@ -6,10 +6,10 @@ import worker from "../src/worker";
 describe("legacy redirects", () => {
   afterEach(() => vi.restoreAllMocks());
 
-  it("redirects the old MPG root in one hop and retains its query", async () => {
-    const response = await worker.fetch(new Request("https://mpg.cinkr.com/?source=old"), {});
-    expect(response.status).toBe(301);
-    expect(response.headers.get("location")).toBe("https://cinkr.com/mpg/?source=old");
+  it("keeps MPG out of the legacy exact-redirect manifest and product origins", () => {
+    expect(legacyRedirects.some((entry) => entry.host === "mpg.cinkr.com")).toBe(false);
+    expect("mpg" in policies.production).toBe(false);
+    expect("mpg" in policies.staging).toBe(false);
   });
   it("keeps RichAuto out of the legacy exact-redirect manifest", () => {
     expect(legacyRedirects.some((entry) => entry.host === "richauto.cinkr.com")).toBe(false);
@@ -20,22 +20,11 @@ describe("legacy redirects", () => {
     expect("hqd" in policies.production).toBe(false);
     expect("hqd" in policies.staging).toBe(false);
   });
-  it("does not turn an unknown legacy path into a homepage redirect", async () => {
-    const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response("MPG not found", { status: 404 }));
+  it("rejects the restored MPG host if it reaches the Worker", async () => {
+    const fetchMock = vi.spyOn(globalThis, "fetch");
     const response = await worker.fetch(new Request("https://mpg.cinkr.com/not-known/"), {});
-    expect(response.status).toBe(404);
-    expect(await response.text()).toBe("MPG not found");
-    expect(fetchMock).toHaveBeenCalledOnce();
-    expect((fetchMock.mock.calls[0][0] as Request).url).toBe(`${policies.production.mpg}/mpg/__legacy_host_unmapped__`);
-  });
-  it("returns a product 404 for an unknown mpg path", async () => {
-    const host = "mpg.cinkr.com";
-    const product = "mpg";
-    const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response("not found", { status: 404 }));
-    const response = await worker.fetch(new Request(`https://${host}/unknown-deep/path/`), { ENVIRONMENT: "production" });
-    expect(response.status).toBe(404);
-    expect(fetchMock).toHaveBeenCalledOnce();
-    expect((fetchMock.mock.calls[0][0] as Request).url).toBe(`${policies.production[product]}/${product}/__legacy_host_unmapped__`);
+    expect(response.status).toBe(421);
+    expect(fetchMock).not.toHaveBeenCalled();
   });
   it("redirects every unknown HMI host path to the Kinco subdomain without fetching an origin", async () => {
     const fetchMock = vi.spyOn(globalThis, "fetch");

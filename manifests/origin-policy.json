@@ -1,10 +1,8 @@
 {
   "production": {
-    "main": "https://cinkr-home.pages.dev",
-    "mpg": "https://cinkr-mpg.pages.dev"
+    "main": "https://cinkr-home.pages.dev"
   },
   "staging": {
-    "main": "https://ed26fd32.cinkr-home.pages.dev",
-    "mpg": "https://33b0a30f.cinkr-mpg.pages.dev"
+    "main": "https://ed26fd32.cinkr-home.pages.dev"
   }
 }

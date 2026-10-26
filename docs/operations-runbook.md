@@ -7,14 +7,14 @@
 - `cinkr.com`
 - `www.cinkr.com`
 - `hmi.cinkr.com`
-- `mpg.cinkr.com`
 - `staging.cinkr.com`
 
-The canonical public URLs are `/` and `/mpg/` on `cinkr.com`.
+The canonical public URL for the main site is `/` on `cinkr.com`.
 Kinco is published directly by Cloudflare Pages at
 `https://kinco.cinkr.com/`; RichAuto is published directly at
 `https://richauto.cinkr.com/`; HQD is published directly at
-`https://hqd.cinkr.com/`. These product sites do not pass through this Worker.
+`https://hqd.cinkr.com/`; MPG is published directly at
+`https://mpg.cinkr.com/`. These product sites do not pass through this Worker.
 `s.cinkr.com` belongs to Shopify and must not be changed as part of this
 repository.
 
@@ -31,19 +31,19 @@ repository.
 
 Do not manually upload a Pages artifact from an uncommitted working tree.
 
-## Add a product subsection
+## Add a product site
 
-1. Build the product site under a unique Astro `base`, for example `/newline`.
-2. Set the product `site` to `https://cinkr.com`.
-3. Emit assets, internal links, canonical URLs, JSON-LD, Open Graph URLs,
-   `robots.txt`, and sitemaps below that base path.
-4. Add the Pages origin to both production and staging in
-   `manifests/origin-policy.json`.
-5. Add the product route in `src/routes.ts`.
-6. Add any retired-host mappings to `manifests/legacy-redirects.json`.
-7. Add the hostname and route in Cloudflare, then deploy the Worker.
-8. Add the product root to `scripts/crawl-acceptance.mjs`.
-9. Verify unknown product paths return 404, never the site homepage.
+1. Publish the product through its own Cloudflare Pages project and product
+   hostname.
+2. Bind the apex and `www` product hostnames to that Pages project.
+3. Add a product-specific `www` Single Redirect to the apex hostname.
+4. Add an explicit one-hop redirect for any retired main-site prefix in
+   `src/worker.ts`.
+5. Add product-specific production acceptance that crawls its sitemap, pages,
+   assets, canonical URLs, 404 response, and routing.
+6. Do not add product hosts to `origin-policy.json` or reintroduce a proxy route.
+7. Verify unknown product paths return that product's 404, never the main
+   homepage.
 
 ## Change a slug
 
@@ -110,6 +110,22 @@ the query string.
 Keep both redirects in place for at least one year. Do not reintroduce HQD
 into `origin-policy.json`, product routing, or the exact-redirect manifest.
 
+## MPG restoration
+
+`mpg.cinkr.com` and `www.mpg.cinkr.com` are Cloudflare Pages Custom Domains
+on the `cinkr-mpg` project and have no Worker Route.
+
+The Worker returns a one-hop permanent redirect from `/mpg` and `/mpg/*` on
+`cinkr.com`, `www.cinkr.com`, and `staging.cinkr.com` to the same path on
+`https://mpg.cinkr.com`, preserving the query string.
+
+Cloudflare Single Redirect returns a one-hop permanent redirect from
+`www.mpg.cinkr.com/*` to the same path on the apex MPG hostname, preserving
+the query string.
+
+Keep both redirects in place for at least one year. Do not reintroduce MPG
+into `origin-policy.json`, product routing, or the exact-redirect manifest.
+
 ## Staging invariants
 
 Keep all of the following enabled:
@@ -130,6 +146,7 @@ npm run acceptance:production
 npm run acceptance:kinco:production
 npm run acceptance:richauto:production
 npm run acceptance:hqd:production
+npm run acceptance:mpg:production
 ```
 
 The check covers:
@@ -140,6 +157,7 @@ The check covers:
   retired product-domain redirects;
 - `/richauto` and `www.richauto.cinkr.com` permanent redirects;
 - `/hqd` and `www.hqd.cinkr.com` permanent redirects;
+- `/mpg` and `www.mpg.cinkr.com` permanent redirects;
 - unknown-path 404 responses;
 - production `noindex` leakage;
 - canonical URLs;
@@ -153,7 +171,8 @@ processing status separately.
 
 Use `docs/kinco-subdomain-cutover-20261026.md` for the Kinco restoration,
 `docs/richauto-subdomain-cutover-20261026.md` for the RichAuto restoration,
-`docs/hqd-subdomain-cutover-20261026.md` for the HQD restoration, and
+`docs/hqd-subdomain-cutover-20261026.md` for the HQD restoration,
+`docs/mpg-subdomain-cutover-20261026.md` for the MPG restoration, and
 `docs/cutover-baseline.md` for the earlier subdirectory migration.
 
 1. Remove the production Worker routes.

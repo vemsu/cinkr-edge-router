@@ -1,6 +1,6 @@
 import legacyRedirects from "../manifests/legacy-redirects.json";
 import policies from "../manifests/origin-policy.json";
-import { LEGACY_HOST_PRODUCTS, originFor, PUBLIC_HOSTS, RETIRED_PRODUCT_HOSTS, type ProductRoute } from "./routes";
+import { PUBLIC_HOSTS, RETIRED_PRODUCT_HOSTS } from "./routes";
 
 type Environment = { ENVIRONMENT?: "production" | "staging" };
 type LegacyRedirect = { host: string; path: string; target: string };
@@ -22,7 +22,8 @@ function retiredSubdomainRedirect(url: URL, env: Environment): Response | null {
     "/kinco": "https://kinco.cinkr.com",
     "/hmi": "https://kinco.cinkr.com",
     "/richauto": "https://richauto.cinkr.com",
-    "/hqd": "https://hqd.cinkr.com"
+    "/hqd": "https://hqd.cinkr.com",
+    "/mpg": "https://mpg.cinkr.com"
   };
   const route = Object.keys(targets).find((prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`));
   if (!route) return null;
@@ -40,13 +41,6 @@ function retiredHostRedirect(url: URL): Response | null {
   return Response.redirect(destination, 301);
 }
 
-function canonicalPathRedirect(url: URL): Response | null {
-  for (const product of ["mpg"]) {
-    if (url.pathname === `/${product}/robots.txt`) return Response.redirect(new URL("/robots.txt", url.origin), 301);
-  }
-  return null;
-}
-
 function unavailable(requestId: string): Response {
   return new Response("Origin unavailable", { status: 502, headers: { "content-type": "text/plain; charset=utf-8", "x-request-id": requestId } });
 }
@@ -55,24 +49,6 @@ function requestForOrigin(url: URL, request: Request): Request {
   const headers = new Headers(request.headers);
   headers.delete("host");
   return new Request(url, { method: request.method, headers, redirect: "manual" });
-}
-
-async function legacyHostNotFound(request: Request, origin: string, product: ProductRoute, requestId: string): Promise<Response> {
-  const notFoundUrl = new URL(`/${product}/__legacy_host_unmapped__`, origin);
-  try {
-    const response = await fetch(requestForOrigin(notFoundUrl, request));
-    if (response.status === 404) return response;
-  } catch {
-    // Return a deterministic 404 below if the product origin cannot provide its styled page.
-  }
-  return new Response("Not found", {
-    status: 404,
-    headers: {
-      "content-type": "text/plain; charset=utf-8",
-      "x-robots-tag": "noindex, nofollow",
-      "x-request-id": requestId
-    }
-  });
 }
 
 function finalizeResponse(response: Response, env: Environment, requestId: string): Response {
@@ -97,17 +73,10 @@ export default {
     if (retiredRedirect) return finalizeResponse(retiredRedirect, env, requestId);
     const retiredHost = retiredHostRedirect(url);
     if (retiredHost) return finalizeResponse(retiredHost, env, requestId);
-    const canonicalRedirect = canonicalPathRedirect(url);
-    if (canonicalRedirect) return finalizeResponse(canonicalRedirect, env, requestId);
     if (!["GET", "HEAD"].includes(request.method)) return new Response("Method not allowed", { status: 405, headers: { allow: "GET, HEAD", "x-request-id": requestId } });
 
     const policy = policies[(env.ENVIRONMENT ?? "production") as "production" | "staging"];
-    const legacyProduct = LEGACY_HOST_PRODUCTS[url.hostname];
-    const origin = legacyProduct ? policy[legacyProduct] : originFor(url.pathname, policy);
-    if (legacyProduct) {
-      const response = await legacyHostNotFound(request, origin, legacyProduct, requestId);
-      return finalizeResponse(response, env, requestId);
-    }
+    const origin = policy.main;
     const originUrl = new URL(`${url.pathname}${url.search}`, origin);
     try {
       const response = await fetch(requestForOrigin(originUrl, request));

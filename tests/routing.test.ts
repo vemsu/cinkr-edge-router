@@ -1,19 +1,18 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { LEGACY_HOST_PRODUCTS, originFor, productRoute, RETIRED_PRODUCT_HOSTS } from "../src/routes";
+import { PUBLIC_HOSTS, RETIRED_PRODUCT_HOSTS } from "../src/routes";
 import worker from "../src/worker";
 
-const origins = { main: "https://main.example", mpg: "https://mpg.example" };
-
-describe("product routing", () => {
+describe("root and retired-host routing", () => {
   afterEach(() => vi.restoreAllMocks());
 
-  it("retains the remaining product prefix", () => expect(productRoute("/mpg/sitemap-0.xml")).toBe("mpg"));
-  it("does not treat retired product subdirectories as product origins", () => {
-    expect(productRoute("/hqd/gdz-23/")).toBeNull();
-    expect(productRoute("/kinco/gl070/")).toBeNull();
-    expect(productRoute("/richauto/a11/")).toBeNull();
+  it("keeps only the root, retired alias, and staging hosts", () => {
+    expect([...PUBLIC_HOSTS]).toEqual([
+      "cinkr.com",
+      "www.cinkr.com",
+      "hmi.cinkr.com",
+      "staging.cinkr.com"
+    ]);
   });
-  it("keeps root-site requests on the main origin", () => expect(originFor("/privacy-policy/", origins)).toBe(origins.main));
   it("strips the incoming Host header from the origin request", async () => {
     const fetchMock = vi.spyOn(globalThis, "fetch").mockImplementation(async (input) => {
       const request = input as Request;
@@ -26,18 +25,26 @@ describe("product routing", () => {
     expect(await response.text()).toBe("home");
     expect(fetchMock).toHaveBeenCalledOnce();
   });
-  it("maps every remaining legacy product host to its product origin", () => {
-    expect(LEGACY_HOST_PRODUCTS).toEqual({
-      "mpg.cinkr.com": "mpg"
-    });
+  it("maps only the retired HMI host", () => {
     expect(RETIRED_PRODUCT_HOSTS).toEqual({
       "hmi.cinkr.com": "https://kinco.cinkr.com"
     });
   });
-  it("redirects remaining product robots requests to the single site-level robots file", async () => {
+  it("redirects the retired MPG robots route to the MPG site-level file", async () => {
     const response = await worker.fetch(new Request("https://cinkr.com/mpg/robots.txt"), {});
     expect(response.status).toBe(301);
-    expect(response.headers.get("location")).toBe("https://cinkr.com/robots.txt");
+    expect(response.headers.get("location")).toBe("https://mpg.cinkr.com/robots.txt");
+  });
+  it.each([
+    ["https://cinkr.com/mpg", "https://mpg.cinkr.com/"],
+    ["https://cinkr.com/mpg/", "https://mpg.cinkr.com/"],
+    ["https://cinkr.com/mpg/blog/?source=old", "https://mpg.cinkr.com/blog/?source=old"],
+    ["https://www.cinkr.com/mpg/blog/?utm_source=old", "https://mpg.cinkr.com/blog/?utm_source=old"],
+    ["https://staging.cinkr.com/mpg/blog/?source=staging", "https://mpg.cinkr.com/blog/?source=staging"]
+  ])("redirects %s to the MPG subdomain in one hop", async (source, expected) => {
+    const response = await worker.fetch(new Request(source), { ENVIRONMENT: source.includes("staging.") ? "staging" : "production" });
+    expect(response.status).toBe(301);
+    expect(response.headers.get("location")).toBe(expected);
   });
   it.each([
     ["https://cinkr.com/hqd", "https://hqd.cinkr.com/"],
@@ -81,8 +88,11 @@ describe("product routing", () => {
     const richauto = await worker.fetch(new Request("https://cinkr.com/richauto//outside.example/"), { ENVIRONMENT: "production" });
     expect(richauto.status).toBe(301);
     expect(richauto.headers.get("location")).toBe("https://richauto.cinkr.com//outside.example/");
+    const mpg = await worker.fetch(new Request("https://cinkr.com/mpg//outside.example/"), { ENVIRONMENT: "production" });
+    expect(mpg.status).toBe(301);
+    expect(mpg.headers.get("location")).toBe("https://mpg.cinkr.com//outside.example/");
   });
-  it.each(["hqd-other", "kinco-other", "richauto-other"])("does not match paths that only share the %s prefix", async (prefix) => {
+  it.each(["hqd-other", "kinco-other", "richauto-other", "mpg-other"])("does not match paths that only share the %s prefix", async (prefix) => {
     const fetchMock = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response("home", { status: 200 }));
     const response = await worker.fetch(new Request(`https://cinkr.com/${prefix}/`), { ENVIRONMENT: "production" });
     expect(response.status).toBe(200);
@@ -100,7 +110,7 @@ describe("product routing", () => {
     expect(response.headers.get("location")).toBe(expected);
   });
   it("no longer accepts restored product hosts on the edge worker", async () => {
-    for (const host of ["kinco.cinkr.com", "richauto.cinkr.com", "hqd.cinkr.com"]) {
+    for (const host of ["kinco.cinkr.com", "richauto.cinkr.com", "hqd.cinkr.com", "mpg.cinkr.com"]) {
       const response = await worker.fetch(new Request(`https://${host}/`), { ENVIRONMENT: "production" });
       expect(response.status).toBe(421);
     }
@@ -116,6 +126,13 @@ describe("product routing", () => {
     const response = await worker.fetch(new Request("https://staging.cinkr.com/hqd/gdz-23/?source=old"), { ENVIRONMENT: "staging" });
     expect(response.status).toBe(301);
     expect(response.headers.get("location")).toBe("https://hqd.cinkr.com/gdz-23/?source=old");
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(response.headers.get("x-robots-tag")).toBe("noindex, nofollow");
+  });
+  it("keeps the MPG redirect non-cacheable on staging", async () => {
+    const response = await worker.fetch(new Request("https://staging.cinkr.com/mpg/blog/?source=old"), { ENVIRONMENT: "staging" });
+    expect(response.status).toBe(301);
+    expect(response.headers.get("location")).toBe("https://mpg.cinkr.com/blog/?source=old");
     expect(response.headers.get("cache-control")).toBe("no-store");
     expect(response.headers.get("x-robots-tag")).toBe("noindex, nofollow");
   });
