@@ -14,8 +14,10 @@ function redirectFor(url: URL): Response | null {
   return Response.redirect(destination, 301);
 }
 
-function richautoSubdomainRedirect(url: URL): Response | null {
-  if (!["cinkr.com", "www.cinkr.com", "staging.cinkr.com"].includes(url.hostname)) return null;
+function richautoSubdomainRedirect(url: URL, env: Environment): Response | null {
+  const allowedHosts = ["cinkr.com", "www.cinkr.com", "staging.cinkr.com"];
+  const isStagingWorkersDevHost = env.ENVIRONMENT === "staging" && url.hostname === "cinkr-edge-router-staging.atcspindle.workers.dev";
+  if (!allowedHosts.includes(url.hostname) && !isStagingWorkersDevHost) return null;
   if (url.pathname !== "/richauto" && !url.pathname.startsWith("/richauto/")) return null;
   const suffix = url.pathname.slice("/richauto".length) || "/";
   const destination = new URL(`https://richauto.cinkr.com${suffix}`);
@@ -84,7 +86,7 @@ export default {
     const requestId = crypto.randomUUID();
     const isWorkersDevStagingHost = env.ENVIRONMENT === "staging" && url.hostname === "cinkr-edge-router-staging.atcspindle.workers.dev";
     if (!PUBLIC_HOSTS.has(url.hostname) && !isWorkersDevStagingHost) return new Response("Unknown host", { status: 421, headers: { "x-request-id": requestId } });
-    const richautoRedirect = richautoSubdomainRedirect(url);
+    const richautoRedirect = richautoSubdomainRedirect(url, env);
     if (richautoRedirect) return finalizeResponse(richautoRedirect, env, requestId);
     const redirect = redirectFor(url);
     if (redirect) return finalizeResponse(redirect, env, requestId);

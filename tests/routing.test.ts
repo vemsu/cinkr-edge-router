@@ -77,6 +77,11 @@ describe("product routing", () => {
     const response = await worker.fetch(new Request("https://richauto.cinkr.com/"), { ENVIRONMENT: "production" });
     expect(response.status).toBe(421);
   });
+  it("tests the RichAuto redirect on the dedicated staging workers.dev host", async () => {
+    const response = await worker.fetch(new Request("https://cinkr-edge-router-staging.atcspindle.workers.dev/richauto/a11/?source=staging"), { ENVIRONMENT: "staging" });
+    expect(response.status).toBe(301);
+    expect(response.headers.get("location")).toBe("https://richauto.cinkr.com/a11/?source=staging");
+  });
   it("allows the dedicated workers.dev hostname only in staging", async () => {
     const staging = await worker.fetch(new Request("https://cinkr-edge-router-staging.atcspindle.workers.dev/"), { ENVIRONMENT: "staging" });
     const production = await worker.fetch(new Request("https://cinkr-edge-router-staging.atcspindle.workers.dev/"), { ENVIRONMENT: "production" });
