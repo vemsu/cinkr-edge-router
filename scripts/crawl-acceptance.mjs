@@ -13,16 +13,11 @@ const base = new URL(baseArg ?? defaultBase);
 if (!base.pathname.endsWith("/")) base.pathname += "/";
 
 const redirectManifest = JSON.parse(await readFile(new URL("../manifests/legacy-redirects.json", import.meta.url), "utf8"));
-const products = ["kinco", "hqd", "richauto", "mpg"];
+const products = ["kinco", "hqd", "mpg"];
 const legacyHosts = {
   "hmi.cinkr.com": "kinco",
   "hqd.cinkr.com": "hqd",
-  "richauto.cinkr.com": "richauto",
-  "www.richauto.cinkr.com": "richauto",
   "mpg.cinkr.com": "mpg"
-};
-const legacyHostAliases = {
-  "www.richauto.cinkr.com": "richauto.cinkr.com"
 };
 const securityHeaders = [
   "content-security-policy",
@@ -111,14 +106,27 @@ checked.redirects += 1;
 expect(hmiRoot.response.status === 301, "/hmi: expected 301");
 expect(hmiRoot.response.headers.get("location") === publicUrl("/kinco/?source=legacy"), "/hmi: wrong redirect target");
 
+const richautoRedirects = [
+  ["/richauto", "https://richauto.cinkr.com/"],
+  ["/richauto/", "https://richauto.cinkr.com/"],
+  ["/richauto/a11/?source=legacy", "https://richauto.cinkr.com/a11/?source=legacy"]
+];
+for (const [path, expected] of richautoRedirects) {
+  const { response } = await get(path);
+  checked.redirects += 1;
+  expect(response.status === 301, `${path}: expected 301, received ${response.status}`);
+  expect(response.headers.get("location") === expected, `${path}: wrong redirect target`);
+}
+const richautoOther = await get("/richauto-other/");
+expect(richautoOther.response.status === 404, "/richauto-other/: must not match the retired prefix");
+
 const mainMissing = await get("/acceptance-path-that-does-not-exist/");
 checked.notFound += 1;
 expect(mainMissing.response.status === 404, "/unknown: expected 404, received " + mainMissing.response.status);
 
 if (mode === "production") {
   for (const [host, product] of Object.entries(legacyHosts)) {
-    const manifestHost = legacyHostAliases[host] ?? host;
-    const hostRedirects = redirectManifest.filter((entry) => entry.host === manifestHost);
+    const hostRedirects = redirectManifest.filter((entry) => entry.host === host);
     const rootRedirect = hostRedirects.find((entry) => entry.path === "/");
     const deepRedirect = hostRedirects.find((entry) => entry.path !== "/" && entry.target.startsWith(`https://cinkr.com/${product}/`));
     for (const entry of [rootRedirect, deepRedirect].filter(Boolean)) {

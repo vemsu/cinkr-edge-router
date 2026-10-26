@@ -8,14 +8,14 @@
 - `www.cinkr.com`
 - `hmi.cinkr.com`
 - `hqd.cinkr.com`
-- `richauto.cinkr.com`
-- `www.richauto.cinkr.com`
 - `mpg.cinkr.com`
 - `staging.cinkr.com`
 
-The canonical public URLs are `/`, `/kinco/`, `/hqd/`, `/richauto/`, and
-`/mpg/` on `cinkr.com`. `s.cinkr.com` belongs to Shopify and must not be changed
-as part of this repository.
+The canonical public URLs are `/`, `/kinco/`, `/hqd/`, and `/mpg/` on
+`cinkr.com`. RichAuto is published directly by Cloudflare Pages at
+`https://richauto.cinkr.com/` and does not pass through this Worker.
+`s.cinkr.com` belongs to Shopify and must not be changed as part of this
+repository.
 
 ## Normal deployment
 
@@ -57,16 +57,21 @@ Do not manually upload a Pages artifact from an uncommitted working tree.
 The redirect manifest is the source of truth. Do not implement durable SEO
 redirects as ad hoc string replacement in the Worker.
 
-## RichAuto legacy `www` hostname
+## RichAuto restoration
 
-`www.richauto.cinkr.com/*` is routed to the Worker. The Worker aliases the
-hostname to the RichAuto legacy manifest before resolving an exact path.
-Known paths go directly to `https://cinkr.com/richauto/...`; unknown paths fetch
-the RichAuto product 404 page.
+`richauto.cinkr.com` and `www.richauto.cinkr.com` are Cloudflare Pages Custom
+Domains on the `cinkr-richauto` project and have no Worker Route.
 
-The old zone-level redirect rule and account-level bulk redirect for this
-hostname are intentionally disabled. Re-enabling either would bypass the Worker
-and reintroduce a two-hop redirect.
+The Worker returns a one-hop permanent redirect from `/richauto` and
+`/richauto/*` on `cinkr.com`, `www.cinkr.com`, and `staging.cinkr.com` to the
+same path on `https://richauto.cinkr.com`, preserving the query string.
+
+Cloudflare Single Redirect returns a one-hop permanent redirect from
+`www.richauto.cinkr.com/*` to the same path on the apex RichAuto hostname,
+preserving the query string.
+
+Keep both redirects in place for at least one year. Do not reintroduce RichAuto
+into `origin-policy.json`, product routing, or the exact-redirect manifest.
 
 ## Staging invariants
 
@@ -85,6 +90,7 @@ Run:
 
 ```powershell
 npm run acceptance:production
+npm run acceptance:richauto:production
 ```
 
 The check covers:
@@ -92,7 +98,7 @@ The check covers:
 - canonical products and sitemap pages;
 - CSS, JavaScript, images, fonts, and PDFs;
 - `/hmi/` and retired product-domain redirects;
-- `www.richauto.cinkr.com`;
+- `/richauto` and `www.richauto.cinkr.com` permanent redirects;
 - unknown-path 404 responses;
 - production `noindex` leakage;
 - canonical URLs;
@@ -104,7 +110,8 @@ processing status separately.
 
 ## Rollback
 
-Use `docs/cutover-baseline.md` as the source of truth.
+Use `docs/richauto-subdomain-cutover-20261026.md` for the RichAuto restoration
+and `docs/cutover-baseline.md` for the earlier subdirectory migration.
 
 1. Remove the production Worker routes.
 2. Restore the recorded pre-cutover Pages deployment for each affected project.

@@ -1,15 +1,10 @@
-export const PUBLIC_HOSTS = new Set(["cinkr.com", "www.cinkr.com", "hmi.cinkr.com", "hqd.cinkr.com", "richauto.cinkr.com", "www.richauto.cinkr.com", "mpg.cinkr.com", "staging.cinkr.com"]);
+export const PUBLIC_HOSTS = new Set(["cinkr.com", "www.cinkr.com", "hmi.cinkr.com", "hqd.cinkr.com", "mpg.cinkr.com", "staging.cinkr.com"]);
 
-export type ProductRoute = "kinco" | "hqd" | "richauto" | "mpg";
-export const PRODUCT_ROUTES: readonly ProductRoute[] = ["kinco", "hqd", "richauto", "mpg"];
-export const LEGACY_HOST_ALIASES: Readonly<Record<string, string>> = {
-  "www.richauto.cinkr.com": "richauto.cinkr.com"
-};
+export type ProductRoute = "kinco" | "hqd" | "mpg";
+export const PRODUCT_ROUTES: readonly ProductRoute[] = ["kinco", "hqd", "mpg"];
 export const LEGACY_HOST_PRODUCTS: Readonly<Record<string, ProductRoute>> = {
   "hmi.cinkr.com": "kinco",
   "hqd.cinkr.com": "hqd",
-  "richauto.cinkr.com": "richauto",
-  "www.richauto.cinkr.com": "richauto",
   "mpg.cinkr.com": "mpg"
 };
 

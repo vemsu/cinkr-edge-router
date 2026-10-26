@@ -6,11 +6,10 @@ const inputs = [
   { file: process.argv[2], host: "cinkr.com", basePath: "" },
   { file: process.argv[3], dist: process.argv[4], host: "hmi.cinkr.com", basePath: "/kinco", product: "kinco" },
   { file: process.argv[5], dist: process.argv[6], host: "hqd.cinkr.com", basePath: "/hqd", product: "hqd" },
-  { file: process.argv[7], dist: process.argv[8], host: "richauto.cinkr.com", basePath: "/richauto", product: "richauto" },
-  { file: process.argv[9], dist: process.argv[10], host: "mpg.cinkr.com", basePath: "/mpg", product: "mpg" }
+  { file: process.argv[7], dist: process.argv[8], host: "mpg.cinkr.com", basePath: "/mpg", product: "mpg" }
 ];
 
-if (inputs.some(({ file, dist }) => !file || (dist !== undefined && !dist))) throw new Error("Usage: import-legacy-redirects.mjs <home-redirects> <kinco-redirects> <kinco-dist> <hqd-redirects> <hqd-dist> <richauto-redirects> <richauto-dist> <mpg-redirects> <mpg-dist>");
+if (inputs.some(({ file, dist }) => !file || (dist !== undefined && !dist))) throw new Error("Usage: import-legacy-redirects.mjs <home-redirects> <kinco-redirects> <kinco-dist> <hqd-redirects> <hqd-dist> <mpg-redirects> <mpg-dist>");
 
 const redirects = new Map();
 const add = (host, path, target) => {
@@ -58,7 +57,7 @@ for (const { file, dist, host, basePath, product } of inputs) {
   add(host, "/", `https://cinkr.com${basePath}/`);
 }
 
-for (const host of ["hmi.cinkr.com", "hqd.cinkr.com", "richauto.cinkr.com", "mpg.cinkr.com"]) add(host, "/robots.txt", "https://cinkr.com/robots.txt");
+for (const host of ["hmi.cinkr.com", "hqd.cinkr.com", "mpg.cinkr.com"]) add(host, "/robots.txt", "https://cinkr.com/robots.txt");
 
 const output = [...redirects].map(([key, target]) => {
   const slash = key.indexOf("/", 1);

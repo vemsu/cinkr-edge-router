@@ -6,13 +6,13 @@
     "test": "npx vitest@4.1.11 run",
     "test:watch": "npx vitest@4.1.11",
     "validate": "node scripts/validate-manifest.mjs",
-    "manifest:generate": "node scripts/import-legacy-redirects.mjs \"../01-Cinkr home/dist/_redirects\" \"../03-Cinkr HMI/dist/_redirects\" \"../03-Cinkr HMI/dist/kinco\" \"../04-Cinkr HQD/dist/_redirects\" \"../04-Cinkr HQD/dist/hqd\" \"../02-Cinkr RichAuto/dist/richauto/_redirects\" \"../02-Cinkr RichAuto/dist/richauto\" \"../05-CInkr MPG/dist/mpg/_redirects\" \"../05-CInkr MPG/dist/mpg\"",
+    "manifest:generate": "node scripts/import-legacy-redirects.mjs \"../01-Cinkr home/dist/_redirects\" \"../03-Cinkr HMI/dist/_redirects\" \"../03-Cinkr HMI/dist/kinco\" \"../04-Cinkr HQD/dist/_redirects\" \"../04-Cinkr HQD/dist/hqd\" \"../05-CInkr MPG/dist/mpg/_redirects\" \"../05-CInkr MPG/dist/mpg\"",
     "pages:prepare:kinco": "node scripts/prepare-pages-upload.mjs \"../03-Cinkr HMI/dist\" kinco \".preview/pages/kinco\"",
     "pages:prepare:hqd": "node scripts/prepare-pages-upload.mjs \"../04-Cinkr HQD/dist\" hqd \".preview/pages/hqd\"",
-    "pages:prepare:richauto": "node scripts/prepare-pages-upload.mjs \"../02-Cinkr RichAuto/dist\" richauto \".preview/pages/richauto\"",
     "pages:prepare:mpg": "node scripts/prepare-pages-upload.mjs \"../05-CInkr MPG/dist\" mpg \".preview/pages/mpg\"",
     "acceptance:production": "node scripts/crawl-acceptance.mjs https://cinkr.com/ --mode=production",
     "acceptance:staging": "node scripts/crawl-acceptance.mjs https://cinkr-edge-router-staging.atcspindle.workers.dev/ --mode=staging",
+    "acceptance:richauto:production": "node scripts/acceptance-richauto-subdomain.mjs --routing",
     "check": "npm run validate && npm run test"
   },
   "devDependencies": {

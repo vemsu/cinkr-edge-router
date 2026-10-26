@@ -1,16 +1,24 @@
 import legacyRedirects from "../manifests/legacy-redirects.json";
 import policies from "../manifests/origin-policy.json";
-import { LEGACY_HOST_ALIASES, LEGACY_HOST_PRODUCTS, originFor, PUBLIC_HOSTS, type ProductRoute } from "./routes";
+import { LEGACY_HOST_PRODUCTS, originFor, PUBLIC_HOSTS, type ProductRoute } from "./routes";
 
 type Environment = { ENVIRONMENT?: "production" | "staging" };
 type LegacyRedirect = { host: string; path: string; target: string };
 const redirects = new Map((legacyRedirects as LegacyRedirect[]).map((entry) => [`${entry.host}${entry.path}`, entry.target]));
 
 function redirectFor(url: URL): Response | null {
-  const redirectHost = LEGACY_HOST_ALIASES[url.hostname] ?? url.hostname;
-  const target = redirects.get(`${redirectHost}${url.pathname}`);
+  const target = redirects.get(`${url.hostname}${url.pathname}`);
   if (!target) return null;
   const destination = new URL(target);
+  destination.search = url.search;
+  return Response.redirect(destination, 301);
+}
+
+function richautoSubdomainRedirect(url: URL): Response | null {
+  if (!["cinkr.com", "www.cinkr.com", "staging.cinkr.com"].includes(url.hostname)) return null;
+  if (url.pathname !== "/richauto" && !url.pathname.startsWith("/richauto/")) return null;
+  const suffix = url.pathname.slice("/richauto".length) || "/";
+  const destination = new URL(`https://richauto.cinkr.com${suffix}`);
   destination.search = url.search;
   return Response.redirect(destination, 301);
 }
@@ -26,7 +34,7 @@ function canonicalPathRedirect(url: URL): Response | null {
     destination.search = url.search;
     return Response.redirect(destination, 301);
   }
-  for (const product of ["kinco", "hqd", "richauto", "mpg"]) {
+  for (const product of ["kinco", "hqd", "mpg"]) {
     if (url.pathname === `/${product}/robots.txt`) return Response.redirect(new URL("/robots.txt", url.origin), 301);
   }
   return null;
@@ -76,6 +84,8 @@ export default {
     const requestId = crypto.randomUUID();
     const isWorkersDevStagingHost = env.ENVIRONMENT === "staging" && url.hostname === "cinkr-edge-router-staging.atcspindle.workers.dev";
     if (!PUBLIC_HOSTS.has(url.hostname) && !isWorkersDevStagingHost) return new Response("Unknown host", { status: 421, headers: { "x-request-id": requestId } });
+    const richautoRedirect = richautoSubdomainRedirect(url);
+    if (richautoRedirect) return finalizeResponse(richautoRedirect, env, requestId);
     const redirect = redirectFor(url);
     if (redirect) return finalizeResponse(redirect, env, requestId);
     const canonicalRedirect = canonicalPathRedirect(url);
