@@ -20,19 +20,19 @@ Status: candidate implementation in progress; production not changed.
 
 | Project | Production deployment | Notes |
 | --- | --- | --- |
-| `cinkr-richauto` | `556cac43-7925-4ecf-822a-0e4d984fa51d` | Keep for rollback; do not restore `b350c18f-214f-4496-a1bd-f7a73edd4758` |
-| `cinkr-home` | Pending authenticated capture | Record before production merge |
+| `cinkr-richauto` | `0dff682d-b49a-4a17-a016-835c09ff18ae` | Current production; commit `6663387`; keep `556cac43-7925-4ecf-822a-0e4d984fa51d` as a historical rollback point |
+| `cinkr-home` | `6066b153-fd76-43d6-a931-81d6bdbbcee9` | Current production; commit `e3823b2` |
 
 `cinkr-richauto` Custom Domains:
 
 - `richauto.cinkr.com`
-- `www.richauto.cinkr.com`
+- `www.richauto.cinkr.com` (currently deactivated but still attached; reactivate during cutover)
 
 ## Worker baseline
 
-- Active production version: Pending authenticated capture.
+- Active production version: `0df4e1c0-3d3b-409b-a49a-5ee943a54427`.
 - `richauto.cinkr.com/*` route ID: `62bbbf1c74e34c23b3a3f37a35a1ef4c`.
-- `www.richauto.cinkr.com/*` route ID: Pending authenticated capture.
+- `www.richauto.cinkr.com/*` route ID: `04586fc333d44ca9a184040f52c4b3bb`.
 - Preserve the active Worker version ID for rollback before deploying the
   candidate.
 
@@ -64,7 +64,24 @@ Captured 2026-10-26 10:53 +08:00:
 
 ## Candidate acceptance
 
-Pending.
+RichAuto Git Preview:
+
+- Deployment: `6ad3b526-b59c-45d7-922d-9e71eea40b08`
+- URL: `https://6ad3b526.cinkr-richauto.pages.dev`
+- Commit: `9c831e32ae3365fe6431f477a97532ea3798098c`
+- Result: 48 pages, 50 assets, 1 not-found check passed.
+
+Cinkr Home Preview:
+
+- Deployment: `ec8a1493-dfc9-4e8e-8a2b-d5bd41d539c7`
+- URL: `https://ec8a1493.cinkr-home.pages.dev`
+- Commit: `c5a8fb59d084c4918af2e03fbb3311ae56ce1e36`
+- Result: homepage 200, RichAuto subdomain link present, robots sitemap declarations correct.
+
+Staging Worker:
+
+- Version: `157fdfe6-0b95-40df-a297-45d671192cb9`
+- `/richauto` and `/richauto/a11/` return one-hop 301 with query preservation.
 
 ## Production cutover
 
