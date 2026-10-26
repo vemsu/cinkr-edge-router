@@ -11,9 +11,10 @@
 - `mpg.cinkr.com`
 - `staging.cinkr.com`
 
-The canonical public URLs are `/`, `/kinco/`, `/hqd/`, and `/mpg/` on
-`cinkr.com`. RichAuto is published directly by Cloudflare Pages at
-`https://richauto.cinkr.com/` and does not pass through this Worker.
+The canonical public URLs are `/`, `/hqd/`, and `/mpg/` on `cinkr.com`.
+Kinco is published directly by Cloudflare Pages at
+`https://kinco.cinkr.com/`; RichAuto is published directly at
+`https://richauto.cinkr.com/`. Neither product site passes through this Worker.
 `s.cinkr.com` belongs to Shopify and must not be changed as part of this
 repository.
 
@@ -57,6 +58,26 @@ Do not manually upload a Pages artifact from an uncommitted working tree.
 The redirect manifest is the source of truth. Do not implement durable SEO
 redirects as ad hoc string replacement in the Worker.
 
+## Kinco restoration
+
+`kinco.cinkr.com` and `www.kinco.cinkr.com` are Cloudflare Pages Custom
+Domains on the `cinkr-hmi` project and have no Worker Route.
+
+The Worker returns a one-hop permanent redirect from `/kinco` and `/kinco/*`
+on `cinkr.com`, `www.cinkr.com`, and `staging.cinkr.com` to the same path on
+`https://kinco.cinkr.com`, preserving the query string. The retired `/hmi`
+subdirectory does the same.
+
+Known `hmi.cinkr.com` paths use exact one-hop mappings to their final Kinco
+pages. Unknown paths on the retired host redirect to the same path on
+`kinco.cinkr.com` and then return that host's normal 404.
+
+Cloudflare Single Redirect returns a one-hop permanent redirect from
+`www.kinco.cinkr.com/*` to `kinco.cinkr.com`.
+
+Keep these redirects in place for at least one year. Do not reintroduce Kinco
+into `origin-policy.json` or product routing.
+
 ## RichAuto restoration
 
 `richauto.cinkr.com` and `www.richauto.cinkr.com` are Cloudflare Pages Custom
@@ -90,6 +111,7 @@ Run:
 
 ```powershell
 npm run acceptance:production
+npm run acceptance:kinco:production
 npm run acceptance:richauto:production
 ```
 
@@ -97,7 +119,8 @@ The check covers:
 
 - canonical products and sitemap pages;
 - CSS, JavaScript, images, fonts, and PDFs;
-- `/hmi/` and retired product-domain redirects;
+- `/kinco`, `/hmi`, `hmi.cinkr.com`, `www.kinco.cinkr.com`, and remaining
+  retired product-domain redirects;
 - `/richauto` and `www.richauto.cinkr.com` permanent redirects;
 - unknown-path 404 responses;
 - production `noindex` leakage;
@@ -110,7 +133,8 @@ processing status separately.
 
 ## Rollback
 
-Use `docs/richauto-subdomain-cutover-20261026.md` for the RichAuto restoration
+Use `docs/kinco-subdomain-cutover-20261026.md` for the Kinco restoration,
+`docs/richauto-subdomain-cutover-20261026.md` for the RichAuto restoration,
 and `docs/cutover-baseline.md` for the earlier subdirectory migration.
 
 1. Remove the production Worker routes.

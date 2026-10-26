@@ -3,7 +3,12 @@ import { readFile } from "node:fs/promises";
 const redirects = JSON.parse(await readFile(new URL("../manifests/legacy-redirects.json", import.meta.url), "utf8"));
 const seen = new Set();
 for (const redirect of redirects) {
-  if (!redirect.host || !redirect.path?.startsWith("/") || !redirect.target?.startsWith("https://cinkr.com/")) throw new Error(`Invalid redirect: ${JSON.stringify(redirect)}`);
+  if (!redirect.host || !redirect.path?.startsWith("/") || !redirect.target?.startsWith("https://")) throw new Error(`Invalid redirect: ${JSON.stringify(redirect)}`);
+  const targetOrigin = new URL(redirect.target).origin;
+  const allowedOrigins = redirect.host === "hmi.cinkr.com"
+    ? new Set(["https://kinco.cinkr.com"])
+    : new Set(["https://cinkr.com", "https://kinco.cinkr.com"]);
+  if (!allowedOrigins.has(targetOrigin)) throw new Error(`Unexpected redirect origin: ${JSON.stringify(redirect)}`);
   if (new URL(redirect.target).href === new URL(redirect.path, `https://${redirect.host}`).href) {
     throw new Error(`Self redirect: ${redirect.host}${redirect.path}`);
   }

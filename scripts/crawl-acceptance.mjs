@@ -13,9 +13,8 @@ const base = new URL(baseArg ?? defaultBase);
 if (!base.pathname.endsWith("/")) base.pathname += "/";
 
 const redirectManifest = JSON.parse(await readFile(new URL("../manifests/legacy-redirects.json", import.meta.url), "utf8"));
-const products = ["kinco", "hqd", "mpg"];
+const products = ["hqd", "mpg"];
 const legacyHosts = {
-  "hmi.cinkr.com": "kinco",
   "hqd.cinkr.com": "hqd",
   "mpg.cinkr.com": "mpg"
 };
@@ -96,15 +95,32 @@ for (const product of products) {
   expect(missing.response.status === 404, `/${product}/unknown: expected 404, received ${missing.response.status}`);
 }
 
-const hmi = await get("/hmi/gl070/?source=legacy");
-checked.redirects += 1;
-expect(hmi.response.status === 301, "/hmi/gl070/: expected 301");
-expect(hmi.response.headers.get("location") === publicUrl("/kinco/gl070/?source=legacy"), "/hmi/gl070/: wrong redirect target");
-
-const hmiRoot = await get("/hmi?source=legacy");
-checked.redirects += 1;
-expect(hmiRoot.response.status === 301, "/hmi: expected 301");
-expect(hmiRoot.response.headers.get("location") === publicUrl("/kinco/?source=legacy"), "/hmi: wrong redirect target");
+const kincoRedirects = [
+  ["/kinco?source=legacy", "https://kinco.cinkr.com/?source=legacy"],
+  ["/kinco/gl070/?source=legacy", "https://kinco.cinkr.com/gl070/?source=legacy"],
+  ["/hmi?source=legacy", "https://kinco.cinkr.com/?source=legacy"],
+  ["/hmi/gl070/?source=legacy", "https://kinco.cinkr.com/gl070/?source=legacy"]
+];
+for (const [path, expected] of kincoRedirects) {
+  const result = await get(path);
+  checked.redirects += 1;
+  expect(result.response.status === 301, `${path}: expected 301, received ${result.response.status}`);
+  expect(result.response.headers.get("location") === expected, `${path}: wrong redirect target`);
+}
+const kincoOther = await get("/kinco-other/");
+expect(kincoOther.response.status === 404, "/kinco-other/: must not match the retired prefix");
+if (mode === "production") {
+  for (const [path, expected] of [
+    ["/", "https://kinco.cinkr.com/"],
+    ["/gl070/?source=legacy", "https://kinco.cinkr.com/gl070/?source=legacy"],
+    ["/unknown-acceptance/?source=legacy", "https://kinco.cinkr.com/unknown-acceptance/?source=legacy"]
+  ]) {
+    const { response } = await getAbsolute(`https://hmi.cinkr.com${path}`);
+    checked.redirects += 1;
+    expect(response.status === 301, `hmi.cinkr.com${path}: expected 301, received ${response.status}`);
+    expect(response.headers.get("location") === expected, `hmi.cinkr.com${path}: wrong redirect target`);
+  }
+}
 
 const richautoRedirects = [
   ["/richauto", "https://richauto.cinkr.com/"],

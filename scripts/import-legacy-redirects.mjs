@@ -3,19 +3,20 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const inputs = [
-  { file: process.argv[2], host: "cinkr.com", basePath: "" },
-  { file: process.argv[3], dist: process.argv[4], host: "hmi.cinkr.com", basePath: "/kinco", product: "kinco" },
-  { file: process.argv[5], dist: process.argv[6], host: "hqd.cinkr.com", basePath: "/hqd", product: "hqd" },
-  { file: process.argv[7], dist: process.argv[8], host: "mpg.cinkr.com", basePath: "/mpg", product: "mpg" }
+  { file: process.argv[2], host: "cinkr.com", basePath: "", targetOrigin: "https://cinkr.com" },
+  { file: process.argv[3], dist: process.argv[4], host: "hmi.cinkr.com", basePath: "", targetOrigin: "https://kinco.cinkr.com" },
+  { file: process.argv[5], dist: process.argv[6], host: "hqd.cinkr.com", basePath: "/hqd", targetOrigin: "https://cinkr.com" },
+  { file: process.argv[7], dist: process.argv[8], host: "mpg.cinkr.com", basePath: "/mpg", targetOrigin: "https://cinkr.com" }
 ];
 
 if (inputs.some(({ file, dist }) => !file || (dist !== undefined && !dist))) throw new Error("Usage: import-legacy-redirects.mjs <home-redirects> <kinco-redirects> <kinco-dist> <hqd-redirects> <hqd-dist> <mpg-redirects> <mpg-dist>");
 
 const redirects = new Map();
-const add = (host, path, target) => {
+const allowedOrigins = new Set(["https://cinkr.com", "https://kinco.cinkr.com"]);
+const add = (host, path, target, targetOrigin = "https://cinkr.com") => {
   if (!path.startsWith("/") || path.includes("*") || path.includes("\0")) throw new Error(`Invalid legacy path: ${path}`);
-  const destination = new URL(target, "https://cinkr.com");
-  if (destination.protocol !== "https:" || destination.origin !== "https://cinkr.com") throw new Error(`Legacy target leaves cinkr.com: ${target}`);
+  const destination = new URL(target, targetOrigin);
+  if (destination.protocol !== "https:" || !allowedOrigins.has(destination.origin)) throw new Error(`Legacy target leaves approved origins: ${target}`);
   if (destination.href === new URL(path, `https://${host}`).href) return;
   const key = `${host}${path}`;
   if (redirects.has(key) && redirects.get(key) !== destination.href) throw new Error(`Conflicting legacy redirect: ${key}`);
@@ -33,7 +34,7 @@ async function walk(directory, prefix = "") {
   return files;
 }
 
-for (const { file, dist, host, basePath, product } of inputs) {
+for (const { file, dist, host, basePath, targetOrigin } of inputs) {
   const source = await readFile(file, "utf8");
   for (const raw of source.split(/\r?\n/)) {
     const line = raw.trim();
@@ -41,23 +42,24 @@ for (const { file, dist, host, basePath, product } of inputs) {
     const [from, to, status] = line.split(/\s+/);
     if (!from || !to || status !== "301") throw new Error(`Unsupported legacy redirect in ${file}: ${line}`);
     const destination = /^https?:\/\//i.test(to) ? to : `${basePath}${to}`;
-    add(host, from, destination);
+    add(host, from, destination, targetOrigin);
   }
   if (dist) {
     for (const name of await walk(dist)) {
       if (["_headers", "_redirects", ".DS_Store", "robots.txt"].includes(name) || name.endsWith("/.DS_Store")) continue;
       if (name.endsWith("/index.html")) {
         const path = `/${name.slice(0, -"index.html".length)}`;
-        add(host, path, `https://cinkr.com${basePath}${path}`);
+        add(host, path, `${basePath}${path}`, targetOrigin);
       } else if (name !== "index.html") {
-        add(host, `/${name}`, `https://cinkr.com${basePath}/${name}`);
+        add(host, `/${name}`, `${basePath}/${name}`, targetOrigin);
       }
     }
   }
-  add(host, "/", `https://cinkr.com${basePath}/`);
+  add(host, "/", `${basePath}/`, targetOrigin);
 }
 
-for (const host of ["hmi.cinkr.com", "hqd.cinkr.com", "mpg.cinkr.com"]) add(host, "/robots.txt", "https://cinkr.com/robots.txt");
+add("hmi.cinkr.com", "/robots.txt", "/robots.txt", "https://kinco.cinkr.com");
+for (const host of ["hqd.cinkr.com", "mpg.cinkr.com"]) add(host, "/robots.txt", "/robots.txt");
 
 const output = [...redirects].map(([key, target]) => {
   const slash = key.indexOf("/", 1);

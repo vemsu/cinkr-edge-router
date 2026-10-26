@@ -1,6 +1,6 @@
 import legacyRedirects from "../manifests/legacy-redirects.json";
 import policies from "../manifests/origin-policy.json";
-import { LEGACY_HOST_PRODUCTS, originFor, PUBLIC_HOSTS, type ProductRoute } from "./routes";
+import { LEGACY_HOST_PRODUCTS, originFor, PUBLIC_HOSTS, RETIRED_PRODUCT_HOSTS, type ProductRoute } from "./routes";
 
 type Environment = { ENVIRONMENT?: "production" | "staging" };
 type LegacyRedirect = { host: string; path: string; target: string };
@@ -14,29 +14,33 @@ function redirectFor(url: URL): Response | null {
   return Response.redirect(destination, 301);
 }
 
-function richautoSubdomainRedirect(url: URL, env: Environment): Response | null {
+function retiredSubdomainRedirect(url: URL, env: Environment): Response | null {
   const allowedHosts = ["cinkr.com", "www.cinkr.com", "staging.cinkr.com"];
   const isStagingWorkersDevHost = env.ENVIRONMENT === "staging" && url.hostname === "cinkr-edge-router-staging.atcspindle.workers.dev";
   if (!allowedHosts.includes(url.hostname) && !isStagingWorkersDevHost) return null;
-  if (url.pathname !== "/richauto" && !url.pathname.startsWith("/richauto/")) return null;
-  const suffix = url.pathname.slice("/richauto".length) || "/";
-  const destination = new URL(`https://richauto.cinkr.com${suffix}`);
+  const targets: Readonly<Record<string, string>> = {
+    "/kinco": "https://kinco.cinkr.com",
+    "/hmi": "https://kinco.cinkr.com",
+    "/richauto": "https://richauto.cinkr.com"
+  };
+  const route = Object.keys(targets).find((prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`));
+  if (!route) return null;
+  const suffix = url.pathname.slice(route.length) || "/";
+  const destination = new URL(`${targets[route]}${suffix}`);
+  destination.search = url.search;
+  return Response.redirect(destination, 301);
+}
+
+function retiredHostRedirect(url: URL): Response | null {
+  const origin = RETIRED_PRODUCT_HOSTS[url.hostname];
+  if (!origin) return null;
+  const destination = new URL(url.pathname, origin);
   destination.search = url.search;
   return Response.redirect(destination, 301);
 }
 
 function canonicalPathRedirect(url: URL): Response | null {
-  if (url.pathname === "/hmi") {
-    const destination = new URL("/kinco/", url.origin);
-    destination.search = url.search;
-    return Response.redirect(destination, 301);
-  }
-  if (url.pathname.startsWith("/hmi/")) {
-    const destination = new URL(`/kinco/${url.pathname.slice("/hmi/".length)}`, url.origin);
-    destination.search = url.search;
-    return Response.redirect(destination, 301);
-  }
-  for (const product of ["kinco", "hqd", "mpg"]) {
+  for (const product of ["hqd", "mpg"]) {
     if (url.pathname === `/${product}/robots.txt`) return Response.redirect(new URL("/robots.txt", url.origin), 301);
   }
   return null;
@@ -86,10 +90,12 @@ export default {
     const requestId = crypto.randomUUID();
     const isWorkersDevStagingHost = env.ENVIRONMENT === "staging" && url.hostname === "cinkr-edge-router-staging.atcspindle.workers.dev";
     if (!PUBLIC_HOSTS.has(url.hostname) && !isWorkersDevStagingHost) return new Response("Unknown host", { status: 421, headers: { "x-request-id": requestId } });
-    const richautoRedirect = richautoSubdomainRedirect(url, env);
-    if (richautoRedirect) return finalizeResponse(richautoRedirect, env, requestId);
     const redirect = redirectFor(url);
     if (redirect) return finalizeResponse(redirect, env, requestId);
+    const retiredRedirect = retiredSubdomainRedirect(url, env);
+    if (retiredRedirect) return finalizeResponse(retiredRedirect, env, requestId);
+    const retiredHost = retiredHostRedirect(url);
+    if (retiredHost) return finalizeResponse(retiredHost, env, requestId);
     const canonicalRedirect = canonicalPathRedirect(url);
     if (canonicalRedirect) return finalizeResponse(canonicalRedirect, env, requestId);
     if (!["GET", "HEAD"].includes(request.method)) return new Response("Method not allowed", { status: 405, headers: { allow: "GET, HEAD", "x-request-id": requestId } });

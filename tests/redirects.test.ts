@@ -24,7 +24,6 @@ describe("legacy redirects", () => {
     expect((fetchMock.mock.calls[0][0] as Request).url).toBe(`${policies.production.mpg}/mpg/__legacy_host_unmapped__`);
   });
   it.each([
-    ["hmi.cinkr.com", "kinco"],
     ["hqd.cinkr.com", "hqd"],
     ["mpg.cinkr.com", "mpg"]
   ])("returns a product 404 for an unknown %s path", async (host, product) => {
@@ -33,6 +32,19 @@ describe("legacy redirects", () => {
     expect(response.status).toBe(404);
     expect(fetchMock).toHaveBeenCalledOnce();
     expect((fetchMock.mock.calls[0][0] as Request).url).toBe(`${policies.production[product as keyof typeof policies.production]}/${product}/__legacy_host_unmapped__`);
+  });
+  it("redirects every unknown HMI host path to the Kinco subdomain without fetching an origin", async () => {
+    const fetchMock = vi.spyOn(globalThis, "fetch");
+    const response = await worker.fetch(new Request("https://hmi.cinkr.com/not-known/?source=old"), { ENVIRONMENT: "production" });
+    expect(response.status).toBe(301);
+    expect(response.headers.get("location")).toBe("https://kinco.cinkr.com/not-known/?source=old");
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+  it("keeps HMI exact rules on kinco.cinkr.com", () => {
+    const hmi = legacyRedirects.filter((entry) => entry.host === "hmi.cinkr.com");
+    expect(hmi.length).toBeGreaterThan(0);
+    expect(hmi.every((entry) => new URL(entry.target).origin === "https://kinco.cinkr.com")).toBe(true);
+    expect(hmi.some((entry) => entry.target.includes("cinkr.com/kinco"))).toBe(false);
   });
   it("routes every manifest entry to its exact canonical target in one hop", async () => {
     const failures: string[] = [];
