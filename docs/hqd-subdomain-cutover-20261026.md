@@ -1,6 +1,6 @@
 # HQD subdomain restoration cutover record
 
-Status: candidate; production cutover not started.
+Status: candidate accepted; production cutover not started.
 
 ## Cloudflare scope
 
@@ -15,6 +15,12 @@ Status: candidate; production cutover not started.
 | `04-Cinkr HQD` | `cinkr-hqd/main` | `bffd936` | `restore/hqd-subdomain-20261026` |
 | `01-Cinkr home` | `origin/main` | `df01022` | `restore/hqd-subdomain-20261026` |
 | `cinkr-edge-router` | `origin/main` | `67767f4` | `restore/hqd-subdomain-20261026` |
+
+| Repository | Candidate commit |
+| --- | --- |
+| `04-Cinkr HQD` | `9c286a8` |
+| `01-Cinkr home` | `e0205ba` |
+| `cinkr-edge-router` | `03b5473` before this acceptance record |
 
 The existing uncommitted change to
 `docs/kinco-subdomain-cutover-20261026.md` in the primary router checkout was
@@ -64,7 +70,54 @@ Captured 2026-10-26 before the candidate changes:
 
 ## Candidate acceptance
 
-Pending.
+Local quality gates:
+
+- HQD `npm run check`: passed; 64 indexable pages, 64 sitemap URLs, 43
+  product images, 1,290 fact/schema/asset/download checks, 812 HMI-alignment
+  checks, and 140 optimization checks.
+- Cinkr Home `npm run check`: passed; 8 tests and 2 indexable pages.
+- Router `npm run check`: passed; manifest valid with 503 exact redirects and
+  43 unit tests.
+
+HQD Pages Preview:
+
+- Deployment: `bff3dc96-8b85-471f-a707-a4b8a1695626`
+- URL: `https://bff3dc96.cinkr-hqd.pages.dev`
+- Source: `9c286a8`
+- Acceptance: 64 pages, 133 assets, and 1 not-found contract passed.
+
+Cinkr Home Preview:
+
+- Git-triggered deployment `3b445b2c-7b09-4649-965f-f5fa09cd9876`
+  remained queued, so the exact clean `dist` from commit `e0205ba` was
+  uploaded as a preview deployment.
+- Deployment: `8f9c7aa5-4f27-4cf6-a32a-c6e484374ad0`
+- URL: `https://8f9c7aa5.cinkr-home.pages.dev`
+- Alias: `https://restore-hqd-subdomain-202610.cinkr-home.pages.dev`
+- Result: homepage and robots returned `200`; the HQD card links directly to
+  `https://hqd.cinkr.com/`; the root robots lists the new HQD sitemap and omits
+  the retired `/hqd` sitemap; Kinco, RichAuto, and MPG links remain present.
+
+Staging Worker:
+
+- Version: `9da452ab-eda6-46fd-a4b3-44515b7ad983`
+- `/hqd`, `/hqd/`, and `/hqd/gdz-23/` returned one-hop `301` responses with
+  query preservation.
+- Staging responses include `X-Robots-Tag: noindex, nofollow` and
+  `Cache-Control: no-store`.
+- `/hqd-other/` returned `404`.
+- General staging acceptance passed: 8 pages, 29 assets, 11 redirects, 2
+  not-found checks, and 1 security-header check.
+
+Visual acceptance:
+
+- Chrome/Ego Browser checked HQD home, GDZ-23, a guide, and the branded 404 at
+  `1440 x 1000` and `390 x 844`.
+- Cinkr Home was checked at both viewport widths.
+- No horizontal overflow, clipped navigation, missing logo, or overlapping
+  content was observed.
+- Screenshots:
+  `C:/Users/M1/ego/hqd-cloudflare-20261026/screens/`.
 
 ## Production cutover
 
