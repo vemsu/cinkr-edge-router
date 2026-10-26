@@ -118,3 +118,36 @@ production daily during the migration window.
 - Search Console continues to report all five `cinkr.com` sitemap indexes as
   successful, with 2 home URLs, 132 Kinco URLs, 64 HQD URLs, 48 RichAuto URLs,
   and 7 MPG URLs discovered.
+
+## 2026-10-26 architecture update and daily check
+
+The production topology changed during the observation window. Kinco and
+RichAuto were moved from subdirectories back to canonical subdomains, while HQD
+and MPG remain on subdirectories:
+
+- `https://cinkr.com/`
+- `https://kinco.cinkr.com/`
+- `https://cinkr.com/hqd/`
+- `https://richauto.cinkr.com/`
+- `https://cinkr.com/mpg/`
+
+The monitoring gate was updated to cover this current topology. The latest
+checks passed:
+
+- General Cinkr acceptance: 73 pages, 149 assets, 16 redirects, 5 not-found
+  checks, and 2 full security-header checks.
+- Kinco subdomain acceptance: 83 pages, 47 assets, 9 redirects, and 1
+  not-found check.
+- RichAuto subdomain acceptance: 48 pages, 50 assets, 6 redirects, and 1
+  not-found check.
+- `/hmi/`, `/hmi/gl070/`, `/kinco/gl070/`, and `/richauto/a11/` returned one-hop
+  301 responses to their canonical subdomain URLs.
+- HQD and MPG legacy-host URLs returned one-hop 301 responses to their canonical
+  subdirectory URLs.
+- `www.richauto.cinkr.com` and `www.cinkr.com/richauto` URLs returned one-hop
+  301 responses to `richauto.cinkr.com`, preserving query strings.
+- Canonical homepages returned the expected self-canonical URLs with no
+  unintended `noindex`.
+- All five current sitemap indexes returned 200 `application/xml` to a Googlebot
+  user agent, and Search Console reports them as successful: 2 home URLs,
+  64 HQD URLs, 7 MPG URLs, 132 Kinco URLs, and 48 RichAuto URLs.
