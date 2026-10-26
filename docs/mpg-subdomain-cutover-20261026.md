@@ -1,7 +1,8 @@
 # MPG subdomain restoration cutover record
 
-Status: in progress. Baseline captured; implementation, candidate acceptance,
-production cutover, search-platform actions, and observation are not complete.
+Status: in progress. Baseline, implementation, candidate acceptance, staging
+validation, and Cloudflare preconfiguration are complete. Production cutover,
+search-platform actions, and observation are not complete.
 
 ## Cloudflare scope
 
@@ -31,6 +32,23 @@ planning-time SHA-256 was
 | `cinkr-mpg` | `d28d77fe-d1a8-442a-b6a6-7fe7c5c376ef` | `635f6f3` | `https://d28d77fe.cinkr-mpg.pages.dev` |
 | `cinkr-home` | `8495c712-98e5-4ced-b6e2-b6d5f95a427e` | `e0205ba` | `https://8495c712.cinkr-home.pages.dev` |
 
+### Candidate previews
+
+Cloudflare Pages created Git-integration records for the candidate branch but
+reported them as `skipped` because this preview branch is not configured to
+run a Pages build. The already-tested local `dist` outputs were therefore
+uploaded directly with Wrangler, using the matching source commit metadata:
+
+| Project | Preview deployment | Source | Deployment URL | Status |
+| --- | --- | --- | --- | --- |
+| `cinkr-mpg` | `0cd50df7-b1b3-4058-a36b-ccf9068e4d6b` | `c4b64e0` | `https://0cd50df7.cinkr-mpg.pages.dev` | success |
+| `cinkr-home` | `f1921168-c480-4fdb-8d8a-278d5015d318` | `da5df8a` | `https://f1921168.cinkr-home.pages.dev` | success |
+
+The skipped Git-integration records are
+`73464736-2456-4b50-b6b9-5617383fd4c8` for `cinkr-mpg` and
+`f65d6086-e521-4cfa-8220-e32fe795b0d4` for `cinkr-home`. They contain no
+deployed assets and are not acceptance evidence.
+
 `cinkr-mpg` currently emits the subdirectory layout. On the immutable
 deployment URL:
 
@@ -48,6 +66,45 @@ Custom domains:
 | `cinkr-mpg` | `mpg.cinkr.com` | active; domain ID `8f3b887c-f1da-496c-9d41-119d837040a6`; validation and certificate active |
 | `cinkr-mpg` | `www.mpg.cinkr.com` | not attached at baseline |
 
+## Candidate validation
+
+The candidate branches and local builds passed these checks before preview
+upload:
+
+| Repository | Commit | Result |
+| --- | --- | --- |
+| `05-CInkr MPG` | `c4b64e07a9e817f2e8408b2fc4319c22368920fe` | Astro 0 errors/warnings/hints; 6 test files and 149 tests passed; build audit found 8 HTML pages, 7 indexable pages, 7 sitemap URLs, 6 photos, and 5 technical images |
+| `01-Cinkr home` | `da5df8a0609a8bf24513893ce05e30422ab744f4` | Astro 0 errors; 3 test files and 8 tests passed; build audit found 2 indexable pages and 2 sitemap entries |
+| `cinkr-edge-router` | `ee10e90da92936ccf27c23f636cb3bcd59db99b5` | 3 test files and 47 tests passed; manifest validator passed with 437 records and 0 MPG-host records |
+
+Preview acceptance results:
+
+| Check | Result |
+| --- | --- |
+| MPG preview crawl | 7 pages, 32 assets, 1 expected 404, and 0 redirects passed |
+| MPG preview metadata | Canonical, Open Graph, robots, and sitemap use `https://mpg.cinkr.com/`; no retired `/mpg` prefix remains in the build |
+| Home preview | `200`; MPG catalogue link is `https://mpg.cinkr.com/` |
+| Home robots | `200`; declares `https://mpg.cinkr.com/sitemap-index.xml` |
+| Router staging | Worker version `511d7ca6-1c35-46bb-b8ff-c3cbe28e25cc`; 15 redirects and 1 expected 404 passed |
+
+Staging probes confirmed that `/mpg`, `/mpg/`, `/mpg/blog/?source=staging`,
+and `/mpg/robots.txt` each return one-hop `301` responses with
+`Cache-Control: no-store` and `X-Robots-Tag: noindex, nofollow`.
+
+Candidate Chromium screenshots were captured at `1440 x 1000` and
+`390 x 844` for the home page, the guide
+`/blog/what-is-a-cnc-mpg-handwheel/`, and the 404 page:
+
+- `D:\Code\02-项目\Cinkr site\.codex-evidence\mpg-subdomain-20261026\candidate\desktop-home.png`
+- `D:\Code\02-项目\Cinkr site\.codex-evidence\mpg-subdomain-20261026\candidate\desktop-article.png`
+- `D:\Code\02-项目\Cinkr site\.codex-evidence\mpg-subdomain-20261026\candidate\desktop-404.png`
+- `D:\Code\02-项目\Cinkr site\.codex-evidence\mpg-subdomain-20261026\candidate\mobile-home.png`
+- `D:\Code\02-项目\Cinkr site\.codex-evidence\mpg-subdomain-20261026\candidate\mobile-article.png`
+- `D:\Code\02-项目\Cinkr site\.codex-evidence\mpg-subdomain-20261026\candidate\mobile-404.png`
+
+Visual inspection found no horizontal overflow, clipped product imagery,
+missing branding, or mobile-dock obstruction of the principal controls.
+
 ## DNS baseline
 
 The zone reports 20 of 200 available DNS records. Relevant records:
@@ -58,6 +115,33 @@ The zone reports 20 of 200 available DNS records. Relevant records:
 | CNAME | `www.cinkr.com` | `cinkr-home.pages.dev` | yes | none |
 
 No `www.mpg.cinkr.com` DNS record was present in the dashboard baseline.
+
+### Preconfigured `www.mpg` resources
+
+Prepared on 2026-10-26 without enabling the public redirect:
+
+| Resource | Value |
+| --- | --- |
+| Custom Domain | `www.mpg.cinkr.com` |
+| Custom Domain ID | `9dcdafb0-7f5f-4bcf-8827-efacb555f483` |
+| Custom Domain status | `active` |
+| Certificate | `SSL enabled`; validation method `http`, certificate authority `google` |
+| DNS record ID | `2c02860de75a5acea72ec2099b21a4bf` |
+| DNS record | Proxied `CNAME www.mpg.cinkr.com -> cinkr-mpg.pages.dev` |
+| Redirect name | `CINKR canonical www.mpg to MPG apex` |
+| Redirect rule ID | `776b76023783426c95976ec2e6344cfd` |
+| Redirect ruleset ID | `abc8bd25b0444387b89669e68c5a29e4` |
+| Redirect expression | `(http.host eq "www.mpg.cinkr.com")` |
+| Redirect target | `concat("https://mpg.cinkr.com", http.request.uri.path)` |
+| Redirect status/query | `301`; preserve query string enabled |
+| Redirect state | disabled pending production cutover |
+
+Before cutover, `https://mpg.cinkr.com/` still returned `301` to
+`https://cinkr.com/mpg/`; `https://cinkr.com/mpg/` still returned `200`;
+`https://www.cinkr.com/mpg/` still returned `301` to `cinkr.com/mpg/`.
+`https://www.mpg.cinkr.com/` reached the Pages certificate and returned `404`
+from the old subdirectory-layout production deployment because the dedicated
+`www.mpg` redirect remained disabled.
 
 ## Worker baseline
 
