@@ -137,11 +137,14 @@ Final architecture:
 
 Git and deployment:
 
-| Repository | Pre-cutover `main` | Final `main` |
+| Repository | Pre-cutover `main` | Functional/completion `main` |
 | --- | --- | --- |
 | `04-Cinkr HQD` | `bffd936` | `9c286a8` |
 | `01-Cinkr home` | `df01022` | `e0205ba` |
-| `cinkr-edge-router` | `67767f4` | `26114dc` |
+| `cinkr-edge-router` | `67767f4` | `7554f73` |
+
+The cleanup confirmation is a docs-only follow-up commit on `main`; it does not
+change production code.
 
 | Project/Worker | Rollback deployment/version | Production after cutover |
 | --- | --- | --- |
@@ -261,9 +264,10 @@ URLs now return `404`:
 - `cinkr-home`: `8f9c7aa5-4f27-4cf6-a32a-c6e484374ad0`
 - `cinkr-home`: `3b445b2c-7b09-4649-965f-f5fa09cd9876`
 
-The candidate branches and isolated worktrees are removed after the final
-documentation merge. The Router worktree `node_modules` junction is removed
-without deleting the source directory it points to.
+The candidate branches and isolated worktrees were removed after the final
+documentation merge. The Router worktree `node_modules` junction was removed
+without deleting the source directory it points to. Local `main` checkouts were
+fast-forwarded to the merged production commits.
 
 ## Rollback
 
