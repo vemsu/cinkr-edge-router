@@ -150,3 +150,4 @@ if (failures.length) {
   process.exit(1);
 }
 console.log(JSON.stringify({ siteBase: siteBase.href, preview, routing, checked }, null, 2));
+process.exit(0);
