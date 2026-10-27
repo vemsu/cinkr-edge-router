@@ -151,3 +151,31 @@ checks passed:
 - All five current sitemap indexes returned 200 `application/xml` to a Googlebot
   user agent, and Search Console reports them as successful: 2 home URLs,
   64 HQD URLs, 7 MPG URLs, 132 Kinco URLs, and 48 RichAuto URLs.
+
+## 2026-10-27 full subdomain topology check
+
+The production topology completed its move back to independent product
+subdomains. The current canonical site roots are:
+
+- `https://cinkr.com/`
+- `https://kinco.cinkr.com/`
+- `https://hqd.cinkr.com/`
+- `https://richauto.cinkr.com/`
+- `https://mpg.cinkr.com/`
+
+All current production acceptance gates passed:
+
+- Main Cinkr acceptance: 1 page, 0 assets, 18 redirects, and 1 not-found check.
+- Kinco acceptance: 83 pages, 47 assets, 9 redirects, and 1 not-found check.
+- HQD acceptance: 64 pages, 133 assets, 6 redirects, and 1 not-found check.
+- RichAuto acceptance: 48 pages, 50 assets, 6 redirects, and 1 not-found check.
+- MPG acceptance: 7 pages, 32 assets, 8 redirects, and 1 not-found check.
+
+The redirect contracts passed for the former subdirectories on both `cinkr.com`
+and `www.cinkr.com`, each resolving in one hop to the corresponding product
+subdomain. The product `www` hosts and retired `/hmi` paths also resolve in one
+hop. Canonical and `noindex` checks passed with no unexpected production
+`noindex`.
+
+Search Console reports all five current canonical sitemap indexes as successful:
+2 home URLs, 132 Kinco URLs, 64 HQD URLs, 48 RichAuto URLs, and 7 MPG URLs.
