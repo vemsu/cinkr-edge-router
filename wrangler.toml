@@ -5,3 +5,6 @@ workers_dev = true
 
 [vars]
 ENVIRONMENT = "production"
+
+[previews.vars]
+ENVIRONMENT = "preview"

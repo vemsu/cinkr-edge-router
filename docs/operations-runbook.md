@@ -20,14 +20,60 @@ repository.
 
 ## Normal deployment
 
-1. Run `npm run check` in this repository.
-2. Confirm the target product repository passes its own `npm run check`.
-3. Merge the reviewed change to each repository's `main` branch.
-4. Let Cloudflare Pages build the changed project from `main`.
-5. Confirm the new Pages deployment reaches `success` before relying on it.
-6. Run `npm run acceptance:production`.
-7. For Worker source changes, run `npx wrangler deploy`, then rerun production
-   acceptance.
+1. Select the affected sites and run relevant local checks. Push a candidate branch;
+   the Pages Preview build must run the site's complete `npm run check`.
+2. Record the candidate commit and immutable deployment URL. Run the quick check
+   below and verify the changed pages and core interaction in a real desktop and
+   mobile browser. Add every affected page with `--path=/route/`.
+3. If the change is limited to one site's pages, verify the reviewed commit and
+   merged tree match, then merge to `main` when production release is authorized.
+   Wait for the Pages production build; run the same quick check on production.
+4. Changes to Worker, routing, domains, redirects, security headers, deployment
+   configuration, or multiple sites require explicit human confirmation after
+   candidate acceptance and before production changes. For a Worker candidate,
+   follow the independent preview procedure below.
+5. Record the production deployment and prior successful production rollback
+   target. If a required check fails, stop; recover the affected Pages production
+   deployment or Worker version and verify the affected routes.
+
+For example:
+
+```powershell
+npm run acceptance:quick -- --site=home --preview --base=https://a0471991.cinkr-home.pages.dev/ --path=/privacy-policy/
+npm run acceptance:quick -- --site=home
+```
+
+The accepted sites are `home`, `richauto`, `kinco`, `hqd`, and `mpg`.
+Use the immutable hash-based URL of the current deployment, never a branch alias.
+The command checks selected pages, same-site assets, canonical URLs, indexing
+headers, security headers, and a 404; it does not replace browser interaction or
+the routing acceptance checks. For affected product routes provide `--path`
+for each path. Check the production candidate's URLs and changed redirects after
+deployment. Full site crawls and search-console submissions are reserved for
+changes that affect those surfaces.
+
+## Independent Worker candidate preview
+
+Run `npm run check`, then use Wrangler 4.135 or later from the candidate checkout:
+
+```powershell
+npx wrangler preview --name <candidate-name> --ignore-base-config --json
+node scripts/crawl-acceptance.mjs <immutable-deployment-url>/ --mode=staging
+```
+
+The mode name is historical: the URL must be the immutable Worker Preview URL,
+not `staging.cinkr.com` or its existing Worker. The Preview variable
+`ENVIRONMENT=preview` permits only this Worker's preview hostnames and emits
+`noindex, nofollow` and `no-store`. The preview proxies the production main-site
+origin; it is for Worker validation, not candidate Pages content. The routing
+check covers prefix redirects, query preservation, 404 and security headers;
+host-specific legacy mappings and zone-level rules must also be tested in unit
+tests and verified against production after an approved deployment. Worker
+Preview URLs do not reproduce every production zone rule.
+
+Preserve the existing staging DNS, Access, Worker and configuration. They are
+not required by this release workflow. Do not change or remove them as part of
+normal publishing.
 
 Do not manually upload a Pages artifact from an uncommitted working tree.
 
@@ -149,7 +195,7 @@ npm run acceptance:hqd:production
 npm run acceptance:mpg:production
 ```
 
-The check covers:
+The combined commands cover:
 
 - canonical products and sitemap pages;
 - CSS, JavaScript, images, fonts, and PDFs;
@@ -168,6 +214,13 @@ Search Console. A sitemap submission is not evidence of indexing; record the
 processing status separately.
 
 ## Rollback
+
+For a normal Pages release, restore the affected site's previously recorded
+successful **production** deployment, then check its pages, assets and routes.
+Pages Preview deployments are not production rollback targets. For a Worker-only
+change restore the previous recorded Worker version and verify its routes. The
+subdomain migration rollback instructions below apply only to their corresponding
+multi-site cutovers; do not remove production Worker routes for a routine release.
 
 Use `docs/kinco-subdomain-cutover-20261026.md` for the Kinco restoration,
 `docs/richauto-subdomain-cutover-20261026.md` for the RichAuto restoration,

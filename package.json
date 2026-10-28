@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "npx vitest@4.1.11 run",
+    "test": "npx vitest@4.1.11 run && node --test tests/acceptance-quick.node.mjs",
     "test:watch": "npx vitest@4.1.11",
     "validate": "node scripts/validate-manifest.mjs",
     "manifest:generate": "node scripts/import-legacy-redirects.mjs \"../01-Cinkr home/dist/_redirects\" \"../03-Cinkr HMI/dist/_redirects\" \"../03-Cinkr HMI/dist\"",
@@ -11,6 +11,7 @@
     "pages:prepare:hqd": "node scripts/prepare-pages-upload.mjs \"../04-Cinkr HQD/dist\" hqd \".preview/pages/hqd\"",
     "pages:prepare:mpg": "node scripts/prepare-pages-upload.mjs \"../05-CInkr MPG/dist\" mpg \".preview/pages/mpg\"",
     "acceptance:production": "node scripts/crawl-acceptance.mjs https://cinkr.com/ --mode=production",
+    "acceptance:quick": "node scripts/acceptance-quick.mjs",
     "acceptance:staging": "node scripts/crawl-acceptance.mjs https://cinkr-edge-router-staging.atcspindle.workers.dev/ --mode=staging",
     "acceptance:richauto:production": "node scripts/acceptance-richauto-subdomain.mjs --routing",
     "acceptance:kinco:production": "node scripts/acceptance-kinco-subdomain.mjs --routing",

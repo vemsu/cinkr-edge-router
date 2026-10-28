@@ -2,7 +2,9 @@ import legacyRedirects from "../manifests/legacy-redirects.json";
 import policies from "../manifests/origin-policy.json";
 import { PUBLIC_HOSTS, RETIRED_PRODUCT_HOSTS } from "./routes";
 
-type Environment = { ENVIRONMENT?: "production" | "staging" };
+type Environment = { ENVIRONMENT?: "production" | "staging" | "preview" };
+const isPreviewHost = (url: URL, env: Environment) => env.ENVIRONMENT === "preview" &&
+  /^[a-z0-9-]+-cinkr-edge-router\.atcspindle\.workers\.dev$/.test(url.hostname);
 type LegacyRedirect = { host: string; path: string; target: string };
 const redirects = new Map((legacyRedirects as LegacyRedirect[]).map((entry) => [`${entry.host}${entry.path}`, entry.target]));
 
@@ -17,7 +19,7 @@ function redirectFor(url: URL): Response | null {
 function retiredSubdomainRedirect(url: URL, env: Environment): Response | null {
   const allowedHosts = ["cinkr.com", "www.cinkr.com", "staging.cinkr.com"];
   const isStagingWorkersDevHost = env.ENVIRONMENT === "staging" && url.hostname === "cinkr-edge-router-staging.atcspindle.workers.dev";
-  if (!allowedHosts.includes(url.hostname) && !isStagingWorkersDevHost) return null;
+  if (!allowedHosts.includes(url.hostname) && !isStagingWorkersDevHost && !isPreviewHost(url, env)) return null;
   const targets: Readonly<Record<string, string>> = {
     "/kinco": "https://kinco.cinkr.com",
     "/hmi": "https://kinco.cinkr.com",
@@ -54,7 +56,7 @@ function requestForOrigin(url: URL, request: Request): Request {
 function finalizeResponse(response: Response, env: Environment, requestId: string): Response {
   const headers = new Headers(response.headers);
   headers.set("x-request-id", requestId);
-  if (env.ENVIRONMENT === "staging") {
+  if (env.ENVIRONMENT === "staging" || env.ENVIRONMENT === "preview") {
     headers.set("x-robots-tag", "noindex, nofollow");
     headers.set("cache-control", "no-store");
   }
@@ -66,7 +68,7 @@ export default {
     const url = new URL(request.url);
     const requestId = crypto.randomUUID();
     const isWorkersDevStagingHost = env.ENVIRONMENT === "staging" && url.hostname === "cinkr-edge-router-staging.atcspindle.workers.dev";
-    if (!PUBLIC_HOSTS.has(url.hostname) && !isWorkersDevStagingHost) return new Response("Unknown host", { status: 421, headers: { "x-request-id": requestId } });
+    if (!PUBLIC_HOSTS.has(url.hostname) && !isWorkersDevStagingHost && !isPreviewHost(url, env)) return new Response("Unknown host", { status: 421, headers: { "x-request-id": requestId } });
     const redirect = redirectFor(url);
     if (redirect) return finalizeResponse(redirect, env, requestId);
     const retiredRedirect = retiredSubdomainRedirect(url, env);
@@ -75,7 +77,7 @@ export default {
     if (retiredHost) return finalizeResponse(retiredHost, env, requestId);
     if (!["GET", "HEAD"].includes(request.method)) return new Response("Method not allowed", { status: 405, headers: { allow: "GET, HEAD", "x-request-id": requestId } });
 
-    const policy = policies[(env.ENVIRONMENT ?? "production") as "production" | "staging"];
+    const policy = policies[env.ENVIRONMENT === "staging" ? "staging" : "production"];
     const origin = policy.main;
     const originUrl = new URL(`${url.pathname}${url.search}`, origin);
     try {

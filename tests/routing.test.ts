@@ -150,4 +150,14 @@ describe("root and retired-host routing", () => {
     expect(staging.status).not.toBe(421);
     expect(production.status).toBe(421);
   });
+  it("allows isolated preview hosts only in preview and preserves redirect queries", async () => {
+    const url = "https://feature-cinkr-edge-router.atcspindle.workers.dev/mpg/blog/?source=preview";
+    const preview = await worker.fetch(new Request(url), { ENVIRONMENT: "preview" });
+    expect(preview.status).toBe(301);
+    expect(preview.headers.get("location")).toBe("https://mpg.cinkr.com/blog/?source=preview");
+    expect(preview.headers.get("x-robots-tag")).toBe("noindex, nofollow");
+    expect(preview.headers.get("cache-control")).toBe("no-store");
+    expect((await worker.fetch(new Request(url), { ENVIRONMENT: "production" })).status).toBe(421);
+    expect((await worker.fetch(new Request("https://evil-cinkr-edge-router.example.com/"), { ENVIRONMENT: "preview" })).status).toBe(421);
+  });
 });
