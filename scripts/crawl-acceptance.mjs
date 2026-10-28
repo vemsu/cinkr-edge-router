@@ -31,6 +31,7 @@ const publicUrl = (path) => new URL(path, base).href;
 async function get(path, options = {}) {
   const response = await fetch(publicUrl(path), {
     redirect: "manual",
+    signal: AbortSignal.timeout(12000),
     ...options,
     headers: { ...accessHeaders, ...options.headers }
   });
@@ -39,7 +40,7 @@ async function get(path, options = {}) {
 }
 
 async function getAbsolute(url, options = {}) {
-  const response = await fetch(url, { redirect: "manual", ...options, headers: { ...accessHeaders, ...options.headers } });
+  const response = await fetch(url, { redirect: "manual", signal: AbortSignal.timeout(12000), ...options, headers: { ...accessHeaders, ...options.headers } });
   const text = response.status < 300 || response.status >= 400 ? await response.text() : "";
   return { response, text };
 }
